@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-ranchers: var(--font-ranchers-loaded), sans-serif;
+  /* --font-ranchers: var(--font-ranchers-loaded), sans-serif; */
+
   --font-montserrat: var(--font-montserrat-loaded), sans-serif;
+  --font-boldonse: var(--font-boldonse-loaded), sans-serif;
 }
 
 h1,
@@ -11,7 +13,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-ranchers-loaded), sans-serif;
+  /* font-family: var(--font-ranchers-loaded), sans-serif; */
+  font-family: var(--font-boldonse-loaded), sans-serif;
 }
 
 body {

@@ -7,12 +7,12 @@ const TechStack = () => {
       id="techstack"
       className="w-9/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
     >
-      <h1 className="text-4xl md:text-5xl font-ranchers text-left mb-2">
+      <h1 className="text-3xl md:text-4xl font-ranchers text-left mb-2">
         STACK
       </h1>
       <div className="flex flex-col gap-6 pt-8">
         <div className="flex flex-row items-center gap-20">
-          <h4 className="text-2xl md:text-3xl font-ranchers text-left mb-2 w-40 shrink-0">
+          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 w-40 shrink-0">
             LANGUAGES & TOOLS
           </h4>
 
@@ -45,7 +45,7 @@ const TechStack = () => {
         </div>
 
         <div className="flex flex-row items-center gap-20">
-          <h4 className="text-2xl md:text-3xl font-ranchers text-left mb-2 w-40 shrink-0">
+          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 w-40 shrink-0">
             FRAMEWORKS & LIBRARIES
           </h4>
 
@@ -72,7 +72,7 @@ const TechStack = () => {
         </div>
 
         <div className="flex flex-row items-center gap-20">
-          <h4 className="text-2xl md:text-3xl font-ranchers text-left mb-2 w-40 shrink-0">
+          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 w-40 shrink-0">
             TOOLS
           </h4>
 

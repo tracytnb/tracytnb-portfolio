@@ -7,10 +7,10 @@ const About = () => {
       id="about"
       className="w-9/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
     >
-      <h2 className={`text-5xl md:text-6xl font-ranchers text-left mb-2`}>
+      <h2 className={`text-3xl md:text-4xl font-ranchers text-left mb-2`}>
         ABOUT
       </h2>
-      <p className="text-2xl md:text-3xl mb-3 text-left w-full">
+      <p className="text-3xl md:text-4xl mb-3 text-left w-full">
         Guided by human computer interaction (HCI) principles, I strive to
         develop intuitive and user-centered applications that embrace user
         experience, understandability, and accessibility.

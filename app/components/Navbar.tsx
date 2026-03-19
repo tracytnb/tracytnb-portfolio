@@ -1,21 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [isScroll, setIsScroll] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  });
+
   return (
     <>
-      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between">
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between ${isScroll ? "bg-white/10 backdrop-blur-sm shadow-sm" : ""}`}
+      >
         <ul className="hidden md:flex items-center gap-6 lg:gap-8">
           <li>
-            <a href="#top" className="">
-              Home
-            </a>
+            <a href="#top">Home</a>
           </li>
           <li>
             <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#techstack">Stack</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
@@ -25,7 +39,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="relative z-[60] flex items-center gap-4 ml-auto">
+        <div className="relative z-60 flex items-center gap-4 ml-auto">
           <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
             {theme === "dark" ? (
               <svg

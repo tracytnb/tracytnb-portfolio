@@ -5,12 +5,12 @@ const About = () => {
   return (
     <div
       id="about"
-      className="h-screen flex flex-col left-align justify-center gap-4"
+      className="w-9/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
     >
-      <h2 className={`text-4xl md:text-5xl font-ranchers text-left mb-2`}>
+      <h2 className={`text-5xl md:text-6xl font-ranchers text-left mb-2`}>
         ABOUT
       </h2>
-      <p className="text-lg md:text-xl mb-3 text-left w-full">
+      <p className="text-2xl md:text-3xl mb-3 text-left w-full">
         Guided by human computer interaction (HCI) principles, I strive to
         develop intuitive and user-centered applications that embrace user
         experience, understandability, and accessibility.
@@ -21,8 +21,8 @@ const About = () => {
           <Image
             src="/portfolio_image.jpg"
             alt="portfolio image"
-            width={275}
-            height={275}
+            width={250}
+            height={250}
           />
         </div>
 
@@ -35,9 +35,10 @@ const About = () => {
           </p>
           <p>
             My approach to development is centered around the user experience
-            and creativity. I am always looking for fun and unique ways to solve
-            problems and create engaging user experiences while also
-            incorporating the latest technologies and best practices.
+            and creativity with intentional design. I am always looking for fun
+            and unique ways to solve problems and create engaging user
+            experiences while also learning and incorporating the latest
+            technologies and best practices.
           </p>
         </div>
       </div>

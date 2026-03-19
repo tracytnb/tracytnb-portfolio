@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="max-w-3xl -ml-1 text-center mx-auto h-screen flex flex-col left-align justify-center gap-4">
+    <div className="w-full text-center mx-auto h-screen flex flex-col left-align justify-center gap-4">
       <h1 className={`text-6xl md:text-7xl text-left font-ranchers`}>
         FRONTEND DEVELOPER
       </h1>

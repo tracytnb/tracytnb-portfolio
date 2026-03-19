@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { ranchers } from "@/app/fonts";
 
 const Header = () => {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col left-align justify-center gap-4">
-      <h1 className={`text-4xl md:text-5xl text-left ${ranchers.className}`}>
+    <div className="max-w-3xl -ml-1 text-center mx-auto h-screen flex flex-col left-align justify-center gap-4">
+      <h1 className={`text-6xl md:text-7xl text-left font-ranchers`}>
         FRONTEND DEVELOPER
       </h1>
       <p className="text-lg md:text-lg mb-3 text-left">

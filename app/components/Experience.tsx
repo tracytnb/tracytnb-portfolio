@@ -20,7 +20,7 @@ const Experience = () => {
           return (
             <div
               key={index}
-              className="flex flex-col items-start border border-black/10 dark:border-white/10 rounded-lg overflow-hidden"
+              className="flex flex-col items-start overflow-hidden"
             >
               <button
                 type="button"
@@ -31,7 +31,7 @@ const Experience = () => {
                   <h3 className="text-xl md:text-2xl font-ranchers text-left mb-1 shrink-0">
                     {job.title}
                   </h3>
-                  <p className="text-sm opacity-90">{job.company}</p>
+                  <p className="text-sm opacity-90 font-bold">{job.company}</p>
                   <p className="text-sm opacity-75">{job.period}</p>
                 </div>
                 <svg

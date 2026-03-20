@@ -81,7 +81,15 @@ export const projectsData = [
       "Communicated with the client to ensure the project is meeting their needs and goals.",
       "Implemented a responsive design for the frontend, ensuring the project is accessible on all devices.",
     ],
-    images: [],
+    images: [
+      { name: "Landing", src: "/wwl_1.png" },
+      { name: "Landing Continued", src: "/wwl_2.png" },
+      { name: "Products", src: "/wwl_3.png" },
+      { name: "Contact", src: "/wwl_4.png" },
+      { name: "About", src: "/wwl_5.png" },
+      { name: "Policy", src: "/wwl_6.png" },
+      { name: "Cart", src: "/wwl_7.png" },
+    ],
   },
   {
     title: "Makawalu VE Tools",

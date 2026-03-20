@@ -2,6 +2,14 @@
 
 import { projectsData } from "@/assets/assets";
 import React, { useState } from "react";
+import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Projects = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -52,9 +60,12 @@ const Projects = () => {
         </div>
 
         {/* Right: detail panel fills remaining space */}
-        <div className="flex-1 min-w-0 h-150 border border-black/10 dark:border-white/10 rounded-lg overflow-hidden">
+        <div className="flex-1 min-w-0 h-200 rounded-lg overflow-hidden">
           {openIndex !== null ? (
-            <div className="p-3 h-full overflow-y-auto space-y-10">
+            <div
+              key={openIndex}
+              className="detail-slide-in scrollbar-hide p-3 h-full overflow-y-auto space-y-10"
+            >
               <div className="space-y-1">
                 <h5 className="text-sm b-2">DESCRIPTION</h5>
                 <p className="text-sm mb-2">
@@ -75,6 +86,33 @@ const Projects = () => {
                   ))}
                 </ul>
               </div>
+
+              {projectsData[openIndex].images.length > 0 && (
+                <div className="space-y-1">
+                  <Carousel className="w-11/12 mx-auto pt-3">
+                    <CarouselContent>
+                      {projectsData[openIndex].images.map((image, i) => (
+                        <CarouselItem key={i}>
+                          <div className="aspect-video relative w-full overflow-hidden">
+                            <Image
+                              src={image.src}
+                              alt={image.name}
+                              fill
+                              className="object-contain"
+                              sizes="(max-width: 767px) 90vw, 45vw"
+                            />
+                          </div>
+                          <p className="text-sm text-center mt-3">
+                            {image.name}
+                          </p>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="-left-7 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-0" />
+                    <CarouselNext className="-right-7 left-auto -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-0" />
+                  </Carousel>
+                </div>
+              )}
             </div>
           ) : (
             <div className="h-full flex items-center justify-center text-sm text-black/40 dark:text-white/40">

@@ -10,7 +10,7 @@ const TechStack = () => {
       <h1 className="text-3xl md:text-4xl font-ranchers text-left mb-2">
         STACK
       </h1>
-      <div className="flex flex-col gap-6 pt-8">
+      <div className="flex flex-col gap-6 pt-1">
         <div className="flex flex-row items-center gap-20">
           <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 w-40 shrink-0">
             LANGUAGES & TOOLS

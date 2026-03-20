@@ -60,7 +60,19 @@ export const projectsData = [
       "Created a modular architecture for the frontend, allowing for easy scalability and maintenance of the codebase.",
       "Implemented a efficient data fetching and caching on the frontend since the project is heavily data-driven with various data sources.",
     ],
-    images: [],
+    images: [
+      { name: "Landing", src: "/ip_10.png" },
+      { name: "Search View with IPs", src: "/ip_1.png" },
+      { name: "Search View with EU Grants", src: "/ip_2.png" },
+      { name: "List View with IPs", src: "/ip_3.png" },
+      { name: "List View with Opportunities", src: "/ip_11.png" },
+      { name: "List View with Linked Items", src: "/ip_4.png" },
+      { name: "Graph View", src: "/ip_5.png" },
+      { name: "AI Assistant Chat", src: "/ip_6.png" },
+      { name: "About Page", src: "/ip_7.png" },
+      { name: "Video Tutorial", src: "/ip_8.png" },
+      { name: "Step-by-Step Tutorial", src: "/ip_9.png" },
+    ],
   },
   {
     title: "Woven with Love",
@@ -103,6 +115,39 @@ export const projectsData = [
       "Prioritized user interaction and usability using Human Computer Interaction (HCI) principles to ensure the tools are easy to use and understand by a wide range of users.",
       "Created a pipeline to allow for easy integration of different data sources and visualization types into the system.",
     ],
-    images: [],
+    images: [
+      { name: "Upclose View of the Setup", src: "/pt_rainfall.JPG" },
+      { name: "Hardware Setup", src: "/pt_hardware.png" },
+      { name: "Stakeholder Visits", src: "/pt_people.png" },
+      {
+        name: "High Level Overview of System Architecture",
+        src: "/pt_high_level_diagram.png",
+      },
+      {
+        name: "Presenter Tool - Agriculture Data Layer",
+        src: "/pt_agriculture.png",
+      },
+      {
+        name: "Presenter Tool - Agriculture Month/Year Time-Based Slider",
+        src: "/pt_agriculture_data.png",
+      },
+      {
+        name: "User Interaction with the Agriculture Data Layer",
+        src: "/pt_usage.png",
+      },
+      {
+        name: "Author Tool - Information about the Project",
+        src: "/pt_author_1.png",
+      },
+      { name: "Author Tool - Base Layer Selection", src: "/pt_author_2.png" },
+      {
+        name: "Author Tool - Adding in a Fire Risk Layer",
+        src: "/pt_author_3.png",
+      },
+      {
+        name: "Upclose View of the Setup with the Fire Risk Layer",
+        src: "/pt_zoom.png",
+      },
+    ],
   },
 ];

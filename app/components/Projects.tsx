@@ -108,8 +108,8 @@ const Projects = () => {
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="-left-7 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-0" />
-                    <CarouselNext className="-right-7 left-auto -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white border-0" />
+                    <CarouselPrevious className="-left-9 -translate-y-1/2 bg-black/50 hover:bg-black/20 text-white border-0" />
+                    <CarouselNext className="-right-9 left-auto -translate-y-1/2 bg-black/50 hover:bg-black/20 text-white border-0" />
                   </Carousel>
                 </div>
               )}

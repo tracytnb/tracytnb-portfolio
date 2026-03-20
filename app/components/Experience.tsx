@@ -1,55 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-
-const experienceData = [
-  {
-    title: "FRONTEND DEVELOPER - PART-TIME",
-    company: "ScienceDocs, Inc. - REMOTE",
-    period: "September 2025 - Present",
-    bullets: [
-      "Built and iterated on a production-grade React + TypeScript web application, delivering a modular Dashboard/Search experience with Redux state management, pagination, filters, and refactored reusable hooks and components.",
-      "Integrated third-party authentication and role management end-to-end, implementing Firebase Auth flows (email/password and anonymous guest), added Firebase Admin SDK support, and configured Google/Microsoft OAuth for real-world login and authorization.",
-      "Designed and implemented RESTful backend endpoints using Express and TypeScript with proper HTTP semantics, including request validation, authentication middleware, and clear status/error handling (400/401/404/500).",
-      "Implemented relational data storage for core platform features by designing and evolving a SQLite schema for authenticated users and sessions, role audit logging, shareable session snapshots, and persistent user state with TTL logic to support scalable platform behavior.",
-    ],
-  },
-  {
-    title: "GRADUATE RESEARCH ASSISTANT",
-    company:
-      "Laboratory for Advanced Visualization & Applications (LAVA), University of Hawai'i at Mānoa",
-    period: "January 2023 - December 2024",
-    bullets: [
-      "Designed and implemented a modular full-stack data visualization platform combining front-end UI components with backend data services to render dynamic datasets.",
-      "Engineered a modular flexible data ingestion framework supporting structured datasets from files and databases, enabling extensible visualization features without modifying core application logic.",
-      "Applied iterative development practices (prototyping, testing, refactoring) to improve system usability, performance, and maintainability across multiple design cycles.",
-      "Documented system architecture and data flows in shared repositories to support future contributors and maintainability.",
-    ],
-  },
-  {
-    title: "JAVA WEB PROGRAMMER 1",
-    company:
-      "UH Information Technology Services - Enterprise Systems, University of Hawai'i at Mānoa",
-    period: "September 2021 - December 2022",
-    bullets: [
-      "Contributed to modernization of the UH ITS Admin system, migrating from Apache Struts to Spring Boot to improve performance, maintainability, and scalability.",
-      "Developed and maintained features using Java, Spring Boot, JavaScript, AngularJS, Thymeleaf, and MySQL.",
-      "Refactored and optimized legacy code, reducing technical debt, aligning with modern coding practices, and resolved defects to ensure reliable production performance.",
-    ],
-  },
-  {
-    title: "SUMMER ASSOCIATE INTERN",
-    company:
-      "First Hawaiian Bank - Emerging Technologies Division, Remote and In-Person",
-    period: "June 2022 - August 2022",
-    bullets: [
-      "Assisted in developing web features using Golang and integrating them with existing APIs and services, contributing to improved usability and visual consistency for internal tools.",
-      "Implemented small UI components and styling updates ensuring alignment with established design guidelines.",
-      "Updated and tested front-end changes prior to deployment, helping maintain a stable and reliable user experience.",
-      "Participated in Agile Scrum ceremonies while using Jira to track tasks, progress, and collaborate effectively with the team.",
-    ],
-  },
-];
+import { experienceData } from "@/assets/assets";
 
 const Experience = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -103,7 +55,7 @@ const Experience = () => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <ul className="list-disc list-inside px-4 pb-4 pt-0 space-y-2 text-sm md:text-base">
+                  <ul className="list-disc list-inside px-4 pb-4 space-y-2 text-sm md:text-base pt-2">
                     {job.bullets.map((bullet, i) => (
                       <li key={i}>{bullet}</li>
                     ))}

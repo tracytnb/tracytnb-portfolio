@@ -19,9 +19,7 @@ const Projects = () => {
       id="projects"
       className="w-10/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
     >
-      <h2 className={`text-3xl md:text-4xl font-ranchers text-left mb-2`}>
-        PROJECTS
-      </h2>
+      <h2 className={`text-2xl md:text-3xl text-left mb-2`}>PROJECTS</h2>
       <div className="flex flex-row pt-4 gap-6">
         {/* Left: project list */}
         <div className="flex flex-col gap-4 w-100 shrink-0">

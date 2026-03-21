@@ -11,7 +11,7 @@ const Experience = () => {
       id="experience"
       className="w-10/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
     >
-      <h2 className={`text-3xl md:text-4xl font-ranchers text-left mb-2`}>
+      <h2 className={`text-2xl md:text-3xl font-ranchers text-left mb-2`}>
         EXPERIENCE
       </h2>
       <div className="flex flex-col pt-8 gap-10">

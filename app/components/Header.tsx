@@ -24,11 +24,11 @@ const headerItemVariants = {
   },
 };
 
-const greetingText = ["ALOHA,", "HELLO,", "HOWZIT,"];
+const greetingText = ["ALOHA,", "HELLO,", "HOWZIT,", "XIN CHÀO,"];
 
-const GREETING_INTERVAL_MS = 2800;
+const GREETING_INTERVAL_MS = 2400;
 const GREETING_SLIDE_DURATION = 0.9;
-const LETTER_STAGGER = 0.16;
+const LETTER_STAGGER = 0.12;
 
 const greetingContainerVariants = {
   hidden: {},
@@ -219,7 +219,7 @@ const Header = () => {
                 variants={headerItemVariants}
                 className="inline-flex shrink-0 items-center gap-2 bg-white px-10 py-3 font-bold text-black"
               >
-                CONTACT ME
+                CONTACT
               </motion.a>
               <motion.a
                 href="/Resume_Tracy_Bui.pdf"

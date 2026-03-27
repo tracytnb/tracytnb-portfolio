@@ -1,39 +1,97 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "motion/react";
+
+const easeOut = [0.16, 1, 0.3, 1] as const;
+
+const sectionVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: easeOut },
+  },
+};
+
+const lineVariants = {
+  hidden: { scaleX: 0, opacity: 0 },
+  show: {
+    scaleX: 1,
+    opacity: 1,
+    transition: { duration: 0.75, ease: easeOut, delay: 0.15 },
+  },
+};
 
 const About = () => {
   return (
-    <div
+    <motion.section
       id="about"
-      className="w-9/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
+      className="w-9/12 mx-auto min-h-screen flex flex-col justify-center gap-6 py-16 md:py-24"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2, margin: "0px 0px -10% 0px" }}
     >
-      <h2 className={`text-3xl md:text-4xl font-ranchers text-left mb-2`}>
-        ABOUT TRACY
-      </h2>
-      <p className="text-3xl md:text-4xl mb-3 text-left w-full">
+      <motion.div variants={fadeUp} className="space-y-3">
+        <h2 className="text-3xl md:text-4xl font-ranchers text-left">
+          ABOUT <span className="text-accent">TRACY</span>
+        </h2>
+        <motion.div
+          className="h-px w-16 origin-left bg-accent md:w-24"
+          variants={lineVariants}
+          aria-hidden
+        />
+      </motion.div>
+
+      <motion.p
+        variants={fadeUp}
+        className="text-2xl md:text-3xl text-left w-full max-w-4xl leading-snug text-foreground/95"
+      >
         Guided by human computer interaction (HCI) principles, I strive to
         develop intuitive and user-centered applications that embrace user
         experience, understandability, and accessibility.
-      </p>
+      </motion.p>
 
-      <div className="flex w-full flex-col lg:flex-row items-center  my-5">
-        <div className="sm:w-80 max-w-none">
-          <Image
-            src="/portfolio_image.jpg"
-            alt="portfolio image"
-            width={250}
-            height={250}
-          />
+      <motion.div
+        variants={fadeUp}
+        className="flex w-full flex-col lg:flex-row items-start gap-10 lg:gap-14 my-2"
+      >
+        <div className="shrink-0 w-full sm:w-72 max-w-sm mx-auto lg:mx-0">
+          <div className="relative aspect-square overflow-hidden rounded-2xl border border-border/60 bg-muted/30 shadow-lg ring-1 ring-foreground/5">
+            <Image
+              src="/portfolio_image.jpg"
+              alt="Tracy Bui"
+              fill
+              sizes="(max-width: 640px) 100vw, 288px"
+              className="object-cover transition-transform duration-500 ease-out hover:scale-[1.02]"
+            />
+          </div>
         </div>
 
-        <div className="flex-1 min-w-0 space-y-4">
-          <p>
-            I am passionate about creating meaningful and impactful user
-            experiences when developing web applications. I am commited to
+        <div className="flex-1 min-w-0 space-y-5">
+          <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
+            I am passionate about creating{" "}
+            <span className="font-semibold text-accent">
+              meaningful and impactful user
+            </span>{" "}
+            experiences when developing web applications. I am committed to
             developing software that is not only functional and practical but
             also engaging and memorable to interact with.
           </p>
-          <p>
+          <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
             My approach to development is centered around the user experience
             and creativity with intentional design. I am always looking for fun
             and unique ways to solve problems and create engaging user
@@ -41,8 +99,8 @@ const About = () => {
             technologies and best practices.
           </p>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.section>
   );
 };
 

@@ -1,10 +1,4 @@
-import { Ranchers, Montserrat, Boldonse } from "next/font/google";
-
-// export const ranchers = Ranchers({
-//   weight: "400",
-//   subsets: ["latin"],
-//   variable: "--font-ranchers-loaded",
-// });
+import { Ranchers, Montserrat, Azeret_Mono } from "next/font/google";
 
 export const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
@@ -12,8 +6,8 @@ export const montserrat = Montserrat({
   variable: "--font-montserrat-loaded",
 });
 
-export const boldonse = Boldonse({
-  weight: "400",
+export const azeretMono = Azeret_Mono({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-boldonse-loaded",
+  variable: "--font-azeret-mono-loaded",
 });

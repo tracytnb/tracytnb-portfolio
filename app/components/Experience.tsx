@@ -55,7 +55,7 @@ const Experience = () => {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <ul className="list-disc list-inside px-4 pb-4 space-y-2 text-sm md:text-base pt-2">
+                  <ul className="list-disc list-inside px-4 space-y-4 text-sm md:text-base pt-2">
                     {job.bullets.map((bullet, i) => (
                       <li key={i}>{bullet}</li>
                     ))}

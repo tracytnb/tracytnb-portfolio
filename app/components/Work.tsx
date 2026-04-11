@@ -1,21 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
-import { experienceData } from "@/assets/assets";
+import { workData } from "@/assets/assets";
 
-const Experience = () => {
+const Work = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div
-      id="experience"
+      id="work"
       className="w-10/12 mx-auto h-screen flex flex-col left-align justify-center gap-4"
     >
       <h2 className={`text-2xl md:text-3xl font-ranchers text-left mb-2`}>
-        EXPERIENCE
+        WORK
       </h2>
       <div className="flex flex-col pt-8 gap-10">
-        {experienceData.map((job, index) => {
+        {workData.map((job, index) => {
           const isOpen = openIndex === index;
           return (
             <div
@@ -70,4 +70,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Work;

@@ -1,4 +1,4 @@
-export const experienceData = [
+export const workData = [
   {
     title: "FRONTEND DEVELOPER - PART-TIME",
     company: "ScienceDocs, Inc. - REMOTE",

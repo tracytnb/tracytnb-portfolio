@@ -174,7 +174,10 @@ const Header = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className="w-full bg-[url('/beach_photo.jpg')] bg-cover bg-center bg-no-repeat">
+    <div
+      id="top"
+      className="w-full bg-[url('/beach_photo.jpg')] bg-cover bg-center bg-no-repeat"
+    >
       <motion.div
         className="mx-auto flex min-h-screen w-11/12 flex-col pt-8 pb-10 md:pb-14"
         variants={headerLoadVariants}

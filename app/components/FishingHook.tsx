@@ -12,7 +12,7 @@ import {
 
 /** Line end Y in viewBox units at scroll 0 vs full scroll */
 const LINE_END_Y_MAX = 1000;
-const LINE_END_Y_MIN = 200;
+const LINE_END_Y_MIN = 500;
 /** Hook sits slightly above the line end (was 840 vs 850). */
 const HOOK_ABOVE_LINE = 10;
 

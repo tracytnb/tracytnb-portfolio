@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat, azeretMono } from "./fonts";
+import { montserrat, azeretMono, spaceGrotesk } from "./fonts";
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ export default function RootLayout({
       className={cn("scroll-smooth", "font-sans", geist.variable)}
     >
       <body
-        className={`${azeretMono.variable} ${montserrat.variable} ${montserrat.className} h-full antialiased leading-8 overflow-x-hidden`}
+        className={`${azeretMono.variable} ${spaceGrotesk.variable} ${spaceGrotesk.className} h-full antialiased leading-8 overflow-x-hidden`}
       >
         {children}
       </body>

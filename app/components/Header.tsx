@@ -186,14 +186,14 @@ const Header = () => {
       >
         <motion.div
           variants={headerItemVariants}
-          className="mt-6 mb-5 text-left md:mt-40"
+          className="mt-6 mb-5 text-left md:mt-40 text-background"
         >
           <RotatingGreeting />
         </motion.div>
 
         <motion.h1
           variants={headerItemVariants}
-          className="text-8xl font-bold md:text-9xl"
+          className="text-8xl font-bold md:text-9xl text-background"
         >
           I&apos;M <span className="text-white">TRACY</span>
         </motion.h1>
@@ -205,7 +205,7 @@ const Header = () => {
             variants={headerItemVariants}
             className="min-w-0 max-w-xs flex-1"
           >
-            <h2 className="text-2xl font-bold md:text-3xl">
+            <h2 className="text-2xl font-bold md:text-3xl text-background">
               A developer with a passion for creating{" "}
               <StaggerText>beautiful</StaggerText>
               {", "}

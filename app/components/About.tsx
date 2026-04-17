@@ -3,37 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-
-const easeOut = [0.16, 1, 0.3, 1] as const;
-
-const sectionVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: easeOut },
-  },
-};
-
-const lineVariants = {
-  hidden: { scaleX: 0, opacity: 0 },
-  show: {
-    scaleX: 1,
-    opacity: 1,
-    transition: { duration: 0.75, ease: easeOut, delay: 0.15 },
-  },
-};
+import { sectionVariants, fadeUp } from "@/app/utils/utils";
 
 const About = () => {
   return (

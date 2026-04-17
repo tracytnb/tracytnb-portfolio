@@ -5,9 +5,7 @@ import {
   motion,
   useMotionValueEvent,
   useScroll,
-  useSpring,
   useTransform,
-  useVelocity,
 } from "motion/react";
 
 /** Line end Y in viewBox units at scroll 0 vs full scroll */
@@ -22,29 +20,14 @@ function hookTransformAttr(endY: number) {
 }
 
 export default function FishingHook() {
-  const { scrollY, scrollYProgress } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const bendTarget = useTransform(scrollVelocity, (v) => {
-    const t = Math.max(-1, Math.min(1, v / 3100));
-    return -t * 22;
-  });
-  const bend = useSpring(bendTarget, {
-    stiffness: 40,
-    damping: 20,
-    mass: 1.1,
-  });
+  const { scrollYProgress } = useScroll();
 
   const lineEndY = useTransform(scrollYProgress, (p) => {
     return LINE_END_Y_MIN + p * (LINE_END_Y_MAX - LINE_END_Y_MIN);
   });
 
-  const linePath = useTransform([bend, lineEndY], ([b, endY]) => {
-    const ey = typeof endY === "number" ? endY : LINE_END_Y_MIN;
-    const c1y = ey * (133 / LINE_END_Y_MAX);
-    const c2y = ey * (267 / LINE_END_Y_MAX);
-    const c1x = 50 + (b as number) * 0.65 + 0.5;
-    const c2x = 50 + (b as number) * 1.05 - 0.4;
-    return `M 50 0 C ${c1x} ${c1y} ${c2x} ${c2y} 50 ${ey}`;
+  const linePath = useTransform(lineEndY, (ey) => {
+    return `M 50 0 C 50 0 50 ${ey} 50 ${ey}`;
   });
 
   /** SVG `transform` must be a real attribute string — MotionValues in `style` on `<g>` often fail to render. */

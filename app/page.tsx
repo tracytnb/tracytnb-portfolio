@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
 import Work from "@/app/components/Work";
-import Projects from "./components/Projects";
+import Project from "./components/Project";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FishingHook from "./components/FishingHook";
@@ -24,7 +24,7 @@ export default function Home() {
       <div className="w-11/12 mx-auto">
         <About />
         <Work />
-        <Projects />
+        <Project />
         <TechStack />
         <Contact />
         <Footer />

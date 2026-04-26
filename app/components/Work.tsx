@@ -45,8 +45,8 @@ const Work = () => {
       className="relative w-11/12 mx-auto -left-18"
       style={{ height: `${workData.length * 100}vh` }}
     >
-      <div className="sticky top-0 flex h-dvh min-h-0 flex-col justify-center gap-4">
-        <h2 className="text-2xl md:text-3xl font-ranchers text-left shrink-0">
+      <div className="sticky top-0 flex h-dvh min-h-0 flex-col gap-4">
+        <h2 className="sticky top-0 z-50 bg-background pl-0 pr-8 pb-4 pt-8 text-2xl font-bold md:text-3xl text-left shrink-0">
           WORK
         </h2>
         <div

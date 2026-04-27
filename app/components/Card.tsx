@@ -41,10 +41,10 @@ export const Card = ({
     <motion.div
       ref={container}
       className={cn(
-        "mt-40 flex h-[800px] w-11/12 flex-col border-2 border-white bg-black sticky top-0",
+        "mt-10 flex h-[800px] w-11/12 flex-col border-2 border-white bg-black sticky top-0",
         className,
       )}
-      style={{ scale: cardScale, top: `calc(10% + ${i * 107}px)` }}
+      style={{ scale: cardScale, top: `calc(2% + ${i * 100}px)` }}
     >
       <div className="flex flex-col bg-background text-foreground p-4 border-b-2 border-foreground">
         <h3 className="text-xl font-bold text-accent">{title}</h3>

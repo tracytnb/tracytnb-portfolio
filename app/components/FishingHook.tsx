@@ -9,8 +9,8 @@ import {
 } from "motion/react";
 
 /** Line end Y in viewBox units at scroll 0 vs full scroll */
-const LINE_END_Y_MAX = 1000;
-const LINE_END_Y_MIN = 500;
+const LINE_END_Y_MAX = 800;
+const LINE_END_Y_MIN = 400;
 /** Hook sits slightly above the line end (was 840 vs 850). */
 const HOOK_ABOVE_LINE = 10;
 

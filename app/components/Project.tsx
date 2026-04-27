@@ -18,9 +18,15 @@ const Project = () => {
 
   return (
     <motion.section ref={sectionRef} id="projects">
-      <h2 className="sticky top-0 z-50 bg-background pl-0 pr-8 pb-4 pt-8 text-2xl font-bold md:text-3xl">
+      <h2 className="bg-background pl-0 pr-8 pb-2 pt-4 text-lg font-bold md:text-xl">
         PROJECTS
       </h2>
+      <div className="flex w-11/12 mx-auto">
+        <p className="text-2xl font-bold">
+          I've been involved in projects with a wide range of technologies and
+          industries, ranging from research, e-commerce, and web development.
+        </p>
+      </div>
       {projectsData.map((project, index) => {
         const targetScale = 1 - (projectsData.length - index) * 0.05;
         return (

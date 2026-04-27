@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -11,10 +11,23 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FishingHook from "./components/FishingHook";
 import VerticalNavigation from "./components/VerticalNavigation";
-// import { ThemeProvider } from "./components/theme/ThemeProvider";
+import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const [railHovered, setRailHovered] = useState(false);
+
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis();
+
+    // Use requestAnimationFrame to continuously update the scroll
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  });
 
   return (
     <>

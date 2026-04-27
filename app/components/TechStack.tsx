@@ -1,98 +1,129 @@
 import React from "react";
 import StackIcon from "tech-stack-icons";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+
+function TiltStackCell({ name }: { name: string }) {
+  const X = useMotionValue(0);
+  const Y = useMotionValue(0);
+  const mouseXSpring = useSpring(X, { stiffness: 500, damping: 30 });
+  const mouseYSpring = useSpring(Y, { stiffness: 500, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["20deg", "-20deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-20deg", "20deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const { width, height, left, top } =
+      e.currentTarget.getBoundingClientRect();
+    X.set((e.clientX - left) / width - 0.5);
+    Y.set((e.clientY - top) / height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    X.set(0);
+    Y.set(0);
+  };
+
+  return (
+    <div className="perspective-[1000px]">
+      <motion.div
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transform: "rotateY(25deg)",
+          transformStyle: "preserve-3d",
+        }}
+        className="relative aspect-square w-35 h-35 size-35 bg-linear-to-br from-white/10 to-blue-300/20 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
+      >
+        <div
+          style={{
+            transform: "translateZ(75px)",
+            transformStyle: "preserve-3d",
+          }}
+          className="absolute inset-8 flex flex-col items-center justify-center gap-2"
+        >
+          <StackIcon name={name} className="w-12 h-12 size-12" />{" "}
+          <p className="text-md font-semibold">
+            {name.charAt(0).toUpperCase() + name.slice(1)}
+          </p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
 
 const TechStack = () => {
   return (
     <div
       id="techstack"
-      className="w-9/12 mx-auto h-screen flex flex-col left-align justify-center gap-10"
+      className="relative w-11/12 mx-auto h-screen -left-18 flex flex-col gap-10"
     >
-      <h1 className="text-3xl md:text-4xl font-ranchers text-left mb-2">
+      <h2 className="sticky top-0 z-50 bg-background pl-0 pr-8 pb-4 pt-8 text-2xl font-bold md:text-3xl text-left shrink-0">
         STACK
-      </h1>
-      <div className="grid grid-cols-[18rem_1fr] gap-x-20 gap-y-6 pt-1 items-start mt-10">
-        <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
-          LANGUAGES & TOOLS
-        </h4>
-
-        <div className="flex flex-row gap-3 flex-wrap">
-          {[
-            "typescript",
-            "js",
-            "html5",
-            "css3",
-            "java",
-            "c#",
-            "go",
-            "python",
-            "unity",
-            "postgresql",
-            "mysql",
-            "sqlite",
-          ].map((name, i) => (
-            <div
-              key={name}
-              className="flex flex-col items-center justify-center p-4 gap-4 cursor-pointer hover:-translate-y-2 duration-300"
-            >
-              <StackIcon name={name} className="w-10 h-10" />
-              <p className="text-md">
-                {name.charAt(0).toUpperCase() + name.slice(1)}
-              </p>
-            </div>
-          ))}
+      </h2>
+      <div className="grid grid-cols-[repeat(3,max-content)] pt-1 justify-center items-center mt-70 md:grid-cols-[repeat(3,max-content)] gap-x-1">
+        <div className="flex flex-col gap-3 mt-auto items-center justify-center">
+          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
+            {[
+              "typescript",
+              "js",
+              "html5",
+              "css3",
+              "java",
+              "c#",
+              "go",
+              "python",
+              "unity",
+              "postgresql",
+              "mysql",
+              "sqlite",
+            ].map((name) => (
+              <TiltStackCell key={name} name={name} />
+            ))}
+          </div>
+          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
+            LANGUAGES & TOOLS
+          </h4>
         </div>
 
-        <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
-          FRAMEWORKS & LIBRARIES
-        </h4>
-
-        <div className="flex flex-row gap-3 flex-wrap">
-          {[
-            "nodejs",
-            "expressjs",
-            "react",
-            "nextjs",
-            "tailwindcss",
-            "flutter",
-          ].map((name, i) => (
-            <div
-              key={name}
-              className="flex flex-col items-center justify-center p-4 gap-4 cursor-pointer hover:-translate-y-2 duration-300"
-            >
-              <StackIcon name={name} className="w-10 h-10" />
-              <p className="text-md">
-                {name.charAt(0).toUpperCase() + name.slice(1)}
-              </p>
-            </div>
-          ))}
+        <div className="flex flex-col gap-3 mt-auto items-center">
+          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
+            {[
+              "nodejs",
+              "expressjs",
+              "react",
+              "nextjs2",
+              "tailwindcss",
+              "flutter",
+            ].map((name, i) => (
+              <TiltStackCell key={name} name={name} />
+            ))}
+          </div>
+          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
+            FRAMEWORKS & LIBRARIES
+          </h4>
         </div>
 
-        <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
-          TOOLS
-        </h4>
-
-        <div className="flex flex-row gap-3 flex-wrap">
-          {[
-            "git",
-            "github",
-            "vscode",
-            "firebase",
-            "photoshop",
-            "jira",
-            "trello",
-            "figma",
-            "canva",
-          ].map((name, i) => (
-            <div
-              key={name}
-              className="flex flex-col items-center justify-center p-4 gap-4 cursor-pointer hover:-translate-y-2 duration-300"
-            >
-              <StackIcon name={name} className="w-10 h-10" />
-              <p className="text-md">
-                {name.charAt(0).toUpperCase() + name.slice(1)}
-              </p>
-            </div>
-          ))}
+        <div className="flex flex-col gap-3 mt-auto items-center">
+          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
+            {[
+              "git",
+              "github",
+              "vscode",
+              "firebase",
+              "photoshop",
+              "jira",
+              "trello",
+              "figma",
+              "canva",
+            ].map((name, i) => (
+              <TiltStackCell key={name} name={name} />
+            ))}
+          </div>
+          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
+            TOOLS
+          </h4>
         </div>
       </div>
     </div>

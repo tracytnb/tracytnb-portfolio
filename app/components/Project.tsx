@@ -17,7 +17,7 @@ const Project = () => {
   });
 
   return (
-    <motion.section ref={sectionRef} id="projects" className="">
+    <motion.section ref={sectionRef} id="projects">
       <h2 className="sticky top-0 z-50 bg-background pl-0 pr-8 pb-4 pt-8 text-2xl font-bold md:text-3xl">
         PROJECTS
       </h2>

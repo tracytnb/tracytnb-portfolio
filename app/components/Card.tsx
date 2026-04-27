@@ -46,8 +46,8 @@ export const Card = ({
       )}
       style={{ scale: cardScale, top: `calc(10% + ${i * 107}px)` }}
     >
-      <div className="flex flex-col bg-white text-black p-4">
-        <h3>{title}</h3>
+      <div className="flex flex-col bg-background text-foreground p-4 border-b-2 border-foreground">
+        <h3 className="text-xl font-bold text-accent">{title}</h3>
         <p>{tools.join(", ")}</p>
       </div>
       <div className="flex flex-1 flex-row gap-1">

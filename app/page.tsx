@@ -21,7 +21,7 @@ export default function Home() {
       {/* <ThemeProvider> */}
       {/* <Navbar /> */}
       <Header />
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto flex flex-col gap-24 md:gap-32">
         <About />
         <Work />
         <Project />

@@ -1,33 +1,46 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
+import { useLayoutEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
 import Work from "@/app/components/Work";
-import Project from "./components/Project";
+// import Project from "./components/Project";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FishingHook from "./components/FishingHook";
 import VerticalNavigation from "./components/VerticalNavigation";
-import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const [railHovered, setRailHovered] = useState(false);
 
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis();
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Use requestAnimationFrame to continuously update the scroll
+    const lenis = new Lenis();
+    lenis.on("scroll", ScrollTrigger.update);
+
+    let rafId = 0;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
+    rafId = requestAnimationFrame(raf);
 
-    requestAnimationFrame(raf);
-  });
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <>
@@ -36,8 +49,8 @@ export default function Home() {
       <Header />
       <div className="w-11/12 mx-auto flex flex-col gap-24 md:gap-32">
         <About />
+        <Projects />
         <Work />
-        <Project />
         <TechStack />
         <Contact />
         <Footer />

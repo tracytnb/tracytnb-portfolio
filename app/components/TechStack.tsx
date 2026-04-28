@@ -8,8 +8,8 @@ function TiltStackCell({ name }: { name: string }) {
   const mouseXSpring = useSpring(X, { stiffness: 500, damping: 30 });
   const mouseYSpring = useSpring(Y, { stiffness: 500, damping: 30 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["20deg", "-20deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-20deg", "20deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["25deg", "-25deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-25deg", "25deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const { width, height, left, top } =

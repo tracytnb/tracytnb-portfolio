@@ -78,7 +78,7 @@ const Projects = () => {
         </div>
       </div>
       {/* Project List */}
-      <div className="-mt-[125px] flex flex-col z-10">
+      <div className="-mt-[110px] flex flex-col z-10">
         {projectsData.map((project, index) => {
           return (
             <div
@@ -86,7 +86,7 @@ const Projects = () => {
               onClick={() => {
                 window.open(project.link || "", "_blank");
               }}
-              className="flex justify-end border-b-2 pb-1 border-white text-white text-[5vw] mt-[40px] mb-[10px] font-bold"
+              className="flex justify-end border-b-2 pb-1 border-white text-white text-[5vw] mt-[25px] mb-[10px] font-bold"
             >
               <FlipLink href={project.link || ""} className="group">
                 <div

@@ -46,8 +46,8 @@ export default function Home() {
       {/* <ThemeProvider> */}
       {/* <Navbar /> */}
       <Header />
+      <About />
       <div className="w-11/12 mx-auto flex flex-col gap-24 md:gap-32">
-        <About />
         <Projects />
         <Work />
         <TechStack />

@@ -60,7 +60,7 @@ export const projectsData = [
       "Modular frontend for scale and maintainability.",
       "Data fetching and caching across multiple sources.",
     ],
-    images: [{ name: "Landing", src: "/ip_10.png" }],
+    images: [{ name: "Landing", src: "/iplink_landing.png" }],
     link: "https://iplink.sciencedocs.com/",
   },
   {

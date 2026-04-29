@@ -145,7 +145,6 @@ const StaggerText = ({ children }: { children: string }) => {
           </motion.span>
         ))}
       </motion.span>
-      {/* Incoming line (starts clipped below); same word, not extra decoration */}
       <motion.span className="absolute inset-0 overflow-hidden" aria-hidden>
         {children.split("").map((l, i) => (
           <motion.span

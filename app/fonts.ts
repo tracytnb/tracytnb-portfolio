@@ -4,7 +4,7 @@ import {
   Azeret_Mono,
   // Space_Grotesk,
   Familjen_Grotesk,
-  Geist_Mono,
+  // Geist_Mono,
 } from "next/font/google";
 
 export const montserrat = Montserrat({
@@ -13,10 +13,10 @@ export const montserrat = Montserrat({
   variable: "--font-montserrat-loaded",
 });
 
-export const geistMono = Geist_Mono({
+export const familjenGrotesk = Familjen_Grotesk({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-geist-mono-loaded",
+  variable: "--font-familjen-grotesk-loaded",
 });
 
 export const azeretMono = Azeret_Mono({

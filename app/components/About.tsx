@@ -63,8 +63,8 @@ const About = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="relative z-10 flex h-full w-11/12 min-h-0 flex-col justify-between px-6 pb-12 pt-8 md:px-16 lg:px-15 -left-16"
         >
-          <div className="ml-auto w-full text-right md:max-w-6xl">
-            <p className="text-base md:text-4xl text-white/95 font-semibold leading-relaxed">
+          <div className="ml-auto w-full text-right md:max-w-4xl">
+            <p className="text-base md:text-4xl text-white/95 font-semibold leading-snug text-left">
               // Passionate about creating{" "}
               <span className="font-semibold text-accent">
                 meaningful and impactful user

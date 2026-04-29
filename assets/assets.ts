@@ -1,6 +1,6 @@
 export const workData = [
   {
-    title: "FRONTEND DEVELOPER - PART-TIME",
+    title: "Frontend Developer - Part-Time",
     company: "ScienceDocs, Inc. - REMOTE",
     period: "September 2025 - Present",
     bullets: [
@@ -11,7 +11,7 @@ export const workData = [
     ],
   },
   {
-    title: "GRADUATE RESEARCH ASSISTANT",
+    title: "Graduate Research Assistant",
     company:
       "Laboratory for Advanced Visualization & Applications (LAVA), University of Hawai'i at Mānoa",
     period: "January 2023 - December 2024",
@@ -23,7 +23,7 @@ export const workData = [
     ],
   },
   {
-    title: "JAVA WEB PROGRAMMER 1",
+    title: "Java Web Programmer 1",
     company:
       "UH Information Technology Services - Enterprise Systems, University of Hawai'i at Mānoa",
     period: "September 2021 - December 2022",
@@ -34,7 +34,7 @@ export const workData = [
     ],
   },
   {
-    title: "SUMMER ASSOCIATE INTERN",
+    title: "Summer Associate Intern",
     company:
       "First Hawaiian Bank - Emerging Technologies Division, Remote and In-Person",
     period: "June 2022 - August 2022",

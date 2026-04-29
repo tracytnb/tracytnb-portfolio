@@ -22,14 +22,14 @@ const Projects = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         img,
-        { yPercent: -20 },
+        { yPercent: -30 },
         {
           yPercent: 0,
           ease: "none",
           scrollTrigger: {
             trigger: row,
             start: "top bottom",
-            end: "top 28%",
+            end: "top 40%",
             scrub: 3,
             invalidateOnRefresh: true,
           },
@@ -53,8 +53,8 @@ const Projects = () => {
         </h2>
 
         <p className="md:text-3xl text-white/95 font-semibold leading-relaxed">
-          // A selection of projects ranging from different industries and
-          domains such as startup, e-commerce, and research
+          // A selection of projects ranging from different domains such as
+          startup, e-commerce, and research.
         </p>
       </div>
       {/* Project Description */}

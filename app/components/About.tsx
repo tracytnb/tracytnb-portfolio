@@ -26,9 +26,9 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="text-6xl md:text-7xl text-left w-full max-w-7xl leading-snug text-foreground font-semibold"
           >
-            Guided by human computer interaction (HCI) principles, I strive to
-            develop intuitive and user-centered applications that embrace user
-            experience, understandability, and accessibility.
+            // Guided by human computer interaction (HCI) principles, I strive
+            to develop intuitive and user-centered applications that embrace
+            user experience, understandability, and accessibility.
           </motion.p>
         </div>
       </div>
@@ -65,7 +65,7 @@ const About = () => {
         >
           <div className="ml-auto w-full text-right md:max-w-6xl">
             <p className="text-base md:text-4xl text-white/95 font-semibold leading-relaxed">
-              Passionate about creating{" "}
+              // Passionate about creating{" "}
               <span className="font-semibold text-accent">
                 meaningful and impactful user
               </span>{" "}
@@ -77,7 +77,7 @@ const About = () => {
 
           <div className="w-full max-w-none md:max-w-7xl">
             <p className="text-base md:text-5xl text-white/95 font-semibold leading-relaxed">
-              Centered around the user experience and creativity with
+              // Centered around the user experience and creativity with
               intentional design. I am always looking for fun and unique ways to
               solve problems and create engaging user experiences while also
               learning and incorporating the latest technologies and best

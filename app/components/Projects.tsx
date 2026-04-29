@@ -22,7 +22,7 @@ const Projects = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         img,
-        { yPercent: -40 },
+        { yPercent: -20 },
         {
           yPercent: 0,
           ease: "none",
@@ -44,8 +44,19 @@ const Projects = () => {
     <div
       ref={sectionRef}
       id="projects"
-      className="relative flex flex-col pt-[160px] w-11/12 mx-auto -left-18 overflow-visible h-screen"
+      className="relative flex w-11/12 mx-auto -left-18 flex-col overflow-visible pt-[160px] pb-16 md:pb-24"
     >
+      {/* Project Header */}
+      <div className="flex flex-col h-[400px] pb-20 min-h-[400px]">
+        <h2 className="text-4xl md:text-5xl text-white font-semibold leading-relaxed">
+          Selected_Projects/
+        </h2>
+
+        <p className="md:text-3xl text-white/95 font-semibold leading-relaxed">
+          // A selection of projects ranging from different industries and
+          domains such as startup, e-commerce, and research
+        </p>
+      </div>
       {/* Project Description */}
       <div
         ref={projectsRowRef}
@@ -78,7 +89,7 @@ const Projects = () => {
         </div>
       </div>
       {/* Project List */}
-      <div className="-mt-[110px] flex flex-col z-10">
+      <div className="-mt-[230px] flex flex-col z-10">
         {projectsData.map((project, index) => {
           return (
             <div

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useState } from "react";
 
 export const navigationItems = [
   { label: "Home", href: "#top", thresholdId: "top" as const },
@@ -20,13 +21,18 @@ type VerticalNavigationProps = {
 };
 
 const VerticalNavigation = ({ railHovered }: VerticalNavigationProps) => {
+  const [highlight, setHighlight] = useState<string | null>(null);
+
+  const handleMouseHover = (thresholdId: string) => {
+    setHighlight(thresholdId);
+  };
+
   return (
     <nav
       aria-label="Page sections"
       className="pointer-events-none absolute inset-0 z-10 hidden flex-col items-end pt-24 right-6 pb-10 md:flex"
     >
-      {/* flex-col stacks rows vertically; avoid absolute+missing top (everything overlapped). */}
-      <div className="flex w-full flex-col items-end gap-5">
+      <div className="flex w-full flex-col items-end gap-3">
         {navigationItems.map((item) => {
           return (
             <motion.a
@@ -35,10 +41,13 @@ const VerticalNavigation = ({ railHovered }: VerticalNavigationProps) => {
               title={item.label}
               aria-label={item.label}
               className="pointer-events-auto flex flex-row items-center gap-2"
+              onMouseOver={() => handleMouseHover(item.thresholdId)}
+              onMouseLeave={() => setHighlight(null)}
               initial={false}
             >
               <motion.span
-                className="whitespace-nowrap text-right text-sm font-medium text-white"
+                className={`whitespace-nowrap text-right text-md font-medium text-white ${highlight === item.thresholdId ? "scale-110 -translate-x-3 duration-300 ease-in-out" : ""}`}
+                animate={{ scale: highlight === item.thresholdId ? 1.1 : 1 }}
                 initial={false}
               >
                 {item.label}

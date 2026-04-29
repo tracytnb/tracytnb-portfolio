@@ -61,12 +61,15 @@ const Work = () => {
                 animate={{
                   y: isInView ? 0 : -100,
                 }}
-                className="flex w-full flex-col overflow-hidden border-t border-foreground"
+                className="flex flex-col items-start overflow-hidden shrink-0 border-t border-foreground"
               >
                 <motion.button
                   type="button"
                   onClick={() => scrollToSegment(index)}
-                  className="relative w-full overflow-hidden p-6 text-left"
+                  className={
+                    "relative w-full overflow-hidden p-4 text-left " +
+                    (!isOpen ? "hover:bg-black/5 dark:hover:bg-white/5" : "")
+                  }
                 >
                   <motion.span
                     aria-hidden
@@ -85,16 +88,55 @@ const Work = () => {
                     }
                   >
                     <div className="flex flex-col items-start min-w-0">
-                      <h3 className="text-2xl md:text-3xl text-left mb-1 shrink-0">
+                      <h3 className="text-2xl md:text-3xl font-ranchers text-left mb-1 shrink-0">
                         {job.title}
                       </h3>
-                      <p className="text-2xl opacity-90 font-bold">
+                      <p className="text-lg opacity-90 font-bold">
                         {job.company}
                       </p>
-                      <p className="text-2xl opacity-75">{job.period}</p>
+                      <p className="text-lg opacity-75">{job.period}</p>
                     </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
                   </div>
                 </motion.button>
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out w-full ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="relative px-4 pt-4 p-6">
+                      <motion.div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 z-0 border border-foreground origin-top"
+                        initial={false}
+                        animate={{ scaleY: isOpen ? 1 : 0 }}
+                        transition={{
+                          duration: 0.9,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                      />
+                      <ul className="relative z-10 list-disc list-inside space-y-4 text-md md:text-lg">
+                        {job.bullets.map((bullet, i) => (
+                          <li key={i}>{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

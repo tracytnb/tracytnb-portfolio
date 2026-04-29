@@ -59,10 +59,10 @@ const TechStack = () => {
       id="techstack"
       className="relative w-11/12 mx-auto h-screen -left-18 flex flex-col gap-10"
     >
-      <h2 className="sticky top-0 z-50 bg-background pl-0 pr-8 pb-4 pt-8 text-2xl font-bold md:text-3xl text-left shrink-0">
-        STACK
+      <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-4">
+        Stack/
       </h2>
-      <div className="grid grid-cols-[repeat(3,max-content)] pt-1 justify-center items-center mt-70 md:grid-cols-[repeat(3,max-content)] gap-x-1">
+      <div className="grid grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto pb-20 md:grid-cols-[repeat(3,max-content)] gap-x-1">
         <div className="flex flex-col gap-3 mt-auto items-center justify-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
             {[
@@ -83,7 +83,7 @@ const TechStack = () => {
             ))}
           </div>
           <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
-            LANGUAGES & TOOLS
+            Languages & Databases
           </h4>
         </div>
 
@@ -101,7 +101,7 @@ const TechStack = () => {
             ))}
           </div>
           <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
-            FRAMEWORKS & LIBRARIES
+            Frameworks & Libraries
           </h4>
         </div>
 
@@ -122,7 +122,7 @@ const TechStack = () => {
             ))}
           </div>
           <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
-            TOOLS
+            Tools
           </h4>
         </div>
       </div>

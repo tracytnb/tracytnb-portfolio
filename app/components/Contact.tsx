@@ -1,50 +1,46 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
 
 const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-10/12 mx-auto h-screen flex flex-col text-center justify-center gap-4"
+      className="w-11/12 mx-auto h-[800px] flex flex-col gap-4 -left-18"
     >
-      <h2 className={`text-2xl md:text-3xl mb-2`}>CONTACT</h2>
-      <h5 className="text-sm md:text-md mb-2">GET IN TOUCH</h5>
-      <p>
-        I'd love to connect with you! Please feel free to reach out to me via
-        email or through the form below.
+      <h2 className="text-4xl md:text-5xl text-white font-semibold leading-relaxed">
+        Contact/
+      </h2>
+      <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed">
+        // Want to collaborate on something?
       </p>
 
-      <form className="w-8/12 mx-auto justify-center items-center">
-        <div className="grid grid-cols-2 gap-6 mt-10 mb-8">
-          <div className="flex flex-col gap-2 left-align">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              required
-              className="flex-0 p-3 outline-none"
-            />
-          </div>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            required
-            className="flex-0 p-3 outline-none"
+      <div className="flex flex-row gap-5 w-full">
+        {/* More About Me */}
+        <div className="flex flex-row gap-10 w-2/3">
+          <img
+            src="/portfolio_image.jpg"
+            alt="Portfolio Image"
+            className="object-cover aspect-square w-1/3"
+            width={300}
+            height={300}
           />
-        </div>
 
-        <textarea
-          rows={6}
-          placeholder="Enter your message"
-          required
-          className="w-full p-4 outline-none mb-6"
-        />
-        <button
-          type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 mx-auto hover:bg-black/50 duration-500"
-        >
-          Submit
-        </button>
-      </form>
+          <div className="flex flex-col gap-2 w-2/3">
+            <p className="text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
+              Based in{" "}
+              <span className="text-accent font-bold">Honolulu, HI</span>,
+              I&apos;m excited to collaborate and create meaningful and
+              enjoyable solutions. I am always striving to learn and grow from
+              others and see what kind of craft we both can bring to the table.
+            </p>
+
+            <p className="text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
+              Status: Open to opportunities | Available: Immediately | Honolulu
+              or Remote
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

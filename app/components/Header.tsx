@@ -223,14 +223,14 @@ const Header = () => {
               >
                 CONTACT
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 href="/Resume_Tracy_Bui.pdf"
                 download
                 variants={headerItemVariants}
                 className="inline-flex shrink-0 items-center gap-2 border-2 border-white/50 text-white font-bold px-10 py-3"
               >
                 RESUME
-              </motion.a>
+              </motion.a> */}
             </div>
           </motion.div>
         </div>

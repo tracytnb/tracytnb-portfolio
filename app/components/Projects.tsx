@@ -30,7 +30,7 @@ const Projects = () => {
             trigger: row,
             start: "top bottom",
             end: "top 40%",
-            scrub: 3,
+            scrub: 1,
             invalidateOnRefresh: true,
           },
         },

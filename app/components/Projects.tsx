@@ -4,34 +4,57 @@ import { projectsData } from "@/assets/assets";
 import { useRef, useLayoutEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import FlipLink from "./FlipLink";
+import { ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const projectsRowRef = useRef<HTMLDivElement>(null);
   const imageContainer = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.create({
-      trigger: imageContainer.current,
-      start: "-=100px",
-      endTrigger: sectionRef.current,
-      end: "top top",
-      pin: true,
-    });
+    const row = projectsRowRef.current;
+    const img = imageContainer.current;
+    if (!row || !img) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        img,
+        { yPercent: -40 },
+        {
+          yPercent: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: row,
+            start: "top bottom",
+            end: "top 28%",
+            scrub: 3,
+            invalidateOnRefresh: true,
+          },
+        },
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <div
       ref={sectionRef}
-      className="relative flex flex-col mt-[25vh] w-11/12 mx-auto -left-18"
+      id="projects"
+      className="relative flex flex-col pt-[160px] w-11/12 mx-auto -left-18 overflow-visible h-screen"
     >
       {/* Project Description */}
-      <div className="flex h-[700px] gap-[5%] w-full">
+      <div
+        ref={projectsRowRef}
+        className="relative flex h-[700px] w-full items-start overflow-visible font-semibold text-[1.35vw]"
+      >
         {/* Image Container */}
         <div
           ref={imageContainer}
-          className="relative h-full w-1/3 overflow-hidden"
+          className="relative h-full w-1/3 shrink-0 overflow-hidden z-10 will-change-transform"
         >
           <img
             src={projectsData[selectedProject].images[0].src}
@@ -40,36 +63,45 @@ const Projects = () => {
           />
         </div>
         {/* Project Details */}
-        <div className="flex flex-col w-3/5 gap-8">
+        <div className="flex flex-col w-3/5 gap-8 ml-auto mt-[20px]">
           {/* Top */}
-          <div className="text-left w-2/3">
-            <p>{projectsData[selectedProject].description}</p>
+          <div className="text-left w-full space-y-4">
+            <p>{projectsData[selectedProject].tools.join(", ")}</p>
+            <p className="font-bold text-accent">
+              {projectsData[selectedProject].role}
+            </p>
           </div>
           {/* Bottom */}
-          <div className="w-3/4 items-end right-align ml-auto justify-end">
-            <p className="ml-auto">{projectsData[selectedProject].role}</p>
-            <ul className="items-end right-align list-disc">
-              {projectsData[selectedProject].roleBullets.map(
-                (bullet, index) => (
-                  <li key={index}>{bullet}</li>
-                ),
-              )}
-            </ul>
+          <div className="w-3/5 items-end right-align ml-auto justify-end space-y-4 mt-[100px]">
+            <p>{projectsData[selectedProject].description}</p>
           </div>
         </div>
       </div>
       {/* Project List */}
-      <div className="mt-[200px] flex flex-col">
+      <div className="-mt-[125px] flex flex-col z-10">
         {projectsData.map((project, index) => {
           return (
             <div
               key={`p_${index}`}
-              onMouseOver={() => {
-                setSelectedProject(index);
+              onClick={() => {
+                window.open(project.link || "", "_blank");
               }}
-              className="flex justify-end border-b-2 pb-6 border-white text-white text-[5vw] mt-[40px] mb-[10px] font-bold"
+              className="flex justify-end border-b-2 pb-1 border-white text-white text-[5vw] mt-[40px] mb-[10px] font-bold"
             >
-              <p>{project.title}</p>
+              <FlipLink href={project.link || ""} className="group">
+                <div
+                  onMouseOver={() => {
+                    setSelectedProject(index);
+                  }}
+                  className="flex flex-row gap-4 items-center"
+                >
+                  <ExternalLink
+                    aria-hidden
+                    className="mb-8 h-12 w-12 shrink-0 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                  />
+                  <p>{project.title}</p>
+                </div>
+              </FlipLink>
             </div>
           );
         })}

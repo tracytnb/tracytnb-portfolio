@@ -5,18 +5,17 @@ import { motion } from "motion/react";
 export const navigationItems = [
   { label: "Home", href: "#top", thresholdId: "top" as const },
   { label: "About", href: "#about", thresholdId: "about" as const },
+  { label: "Projects", href: "#projects", thresholdId: "projects" as const },
   {
     label: "Work",
     href: "#work",
     thresholdId: "work" as const,
   },
-  { label: "Projects", href: "#projects", thresholdId: "projects" as const },
   { label: "Stack", href: "#techstack", thresholdId: "techstack" as const },
   { label: "Contact", href: "#contact", thresholdId: "contact" as const },
 ];
 
 type VerticalNavigationProps = {
-  /** True while pointer is over the fishing rail (line + labels). */
   railHovered: boolean;
 };
 

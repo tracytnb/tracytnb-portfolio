@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 import { useLayoutEffect, useState } from "react";
-import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/About";
 import TechStack from "./components/TechStack";

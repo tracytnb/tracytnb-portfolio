@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 
 const description1 = "ENJOY NATURE OR CLIMBING";
-const description2 = "FOR WILDLIFE OR CRITTERS";
+const description2 = "FOR WILDLIFE & CRITTERS";
 const AboutParallax = () => {
   const container = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -43,7 +43,7 @@ const AboutParallax = () => {
     {
       src: "/shell.jpg",
       y: lgBot,
-      top: "40vh",
+      top: "37vh",
       left: "52vw",
     },
     {
@@ -127,7 +127,7 @@ const AboutParallax = () => {
         </p>
       </div>
 
-      <div className="relative mt-[11vh] flex h-[65vh] w-full justify-center">
+      <div className="relative mt-[5vh] flex h-[65vh] w-full justify-center">
         {imagesBot.map(({ src, y, top, left }, i) => {
           return (
             <motion.div

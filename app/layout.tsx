@@ -17,10 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn("scroll-smooth", "font-sans", geist.variable)}
-    >
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
         className={`${azeretMono.variable} ${familjenGrotesk.variable} ${familjenGrotesk.className} h-full antialiased leading-8 overflow-x-hidden`}
       >

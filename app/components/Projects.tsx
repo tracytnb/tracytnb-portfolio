@@ -89,7 +89,7 @@ const Projects = () => {
         </div>
       </div>
       {/* Project List */}
-      <div className="-mt-[235px] flex flex-col z-10">
+      <div className="-mt-[230px] flex flex-col z-10">
         {projectsData.map((project, index) => {
           return (
             <div

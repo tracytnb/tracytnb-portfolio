@@ -13,7 +13,7 @@ const Contact = () => {
         // Want to collaborate on something?
       </p>
 
-      <div className="flex flex-col gap-10 w-full mt-8">
+      <div className="flex flex-col w-full">
         <div className="flex flex-row gap-10">
           {/* More About Me */}
           <img

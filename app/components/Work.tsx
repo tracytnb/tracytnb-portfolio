@@ -51,7 +51,7 @@ const Work = () => {
         </h2>
         <div
           ref={listRef}
-          className="flex min-h-0 flex-col overflow-y-auto pt-2"
+          className="flex min-h-0 flex-col overflow-hidden pt-2"
         >
           {workData.map((job, index) => {
             const isOpen = openIndex === index;

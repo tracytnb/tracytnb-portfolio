@@ -6,6 +6,7 @@ import Lenis from "@studio-freight/lenis";
 import { useLayoutEffect, useState } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
+import AboutParallax from "./components/AboutParallax";
 import TechStack from "./components/TechStack";
 import Work from "@/app/components/Work";
 // import Project from "./components/Project";
@@ -46,7 +47,8 @@ export default function Home() {
       {/* <ThemeProvider> */}
       {/* <Navbar /> */}
       <Header />
-      <About />
+      {/* <About /> */}
+      <AboutParallax />
       <div className="w-11/12 mx-auto flex flex-col gap-24 md:gap-32">
         <Projects />
         <Work />

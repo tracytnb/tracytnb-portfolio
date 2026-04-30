@@ -11,9 +11,9 @@ import Work from "@/app/components/Work";
 // import Project from "./components/Project";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import FishingHook from "./components/FishingHook";
 import VerticalNavigation from "./components/VerticalNavigation";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [railHovered, setRailHovered] = useState(false);
@@ -52,19 +52,18 @@ export default function Home() {
         <Work />
         <TechStack />
         <Contact />
-        <Footer />
       </div>
-      <div
-        className="pointer-events-auto fixed right-4 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end md:right-8"
-        onMouseEnter={() => setRailHovered(true)}
-        onMouseLeave={() => setRailHovered(false)}
-      >
-        <div className="relative h-full w-20 shrink-0">
+      {/* <Footer /> */}
+      <div className="pointer-events-none fixed right-4 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end md:right-8">
+        <div
+          className="pointer-events-auto relative h-full w-20 shrink-0"
+          onMouseEnter={() => setRailHovered(true)}
+          onMouseLeave={() => setRailHovered(false)}
+        >
           <FishingHook />
           <VerticalNavigation railHovered={railHovered} />
         </div>
       </div>
-      {/* </ThemeProvider> */}
     </>
   );
 }

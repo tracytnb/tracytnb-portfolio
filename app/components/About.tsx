@@ -65,10 +65,7 @@ const About = () => {
         >
           <div className="ml-auto w-full text-right md:max-w-4xl">
             <p className="text-base md:text-4xl text-white/95 font-semibold leading-snug text-left">
-              // Passionate about creating{" "}
-              <span className="font-semibold text-accent">
-                meaningful and impactful user
-              </span>{" "}
+              // Passionate about creating meaningful and impactful user
               experiences. I am committed to developing software that is not
               only functional and practical but also engaging and memorable to
               interact with.

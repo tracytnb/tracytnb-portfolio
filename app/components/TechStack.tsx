@@ -34,7 +34,7 @@ function TiltStackCell({ name }: { name: string }) {
           transform: "rotateY(25deg)",
           transformStyle: "preserve-3d",
         }}
-        className="relative aspect-square w-35 h-35 size-35 bg-linear-to-br from-white/10 to-blue-300/20 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
+        className="relative aspect-square w-35 h-35 size-35 bg-linear-to-br from-white/5 to-foreground/20 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
       >
         <div
           style={{

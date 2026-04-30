@@ -193,7 +193,7 @@ body {
     z-index: 2;
   }
   &:nth-of-type(3) {
-    left: 20vw;
+    left: 22vw;
     top: 40vh;
     height: 35vh;
     width: 25vh;

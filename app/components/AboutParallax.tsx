@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
 
-const description1 = "ENJOY NATURE OR CLIMBING";
+const description1 = "ENJOYING NATURE OR CLIMBING";
 const description2 = "FOR WILDLIFE & CRITTERS";
 const AboutParallax = () => {
   const container = useRef<HTMLDivElement>(null);
@@ -60,7 +60,7 @@ const AboutParallax = () => {
         <motion.h1 className="m-0 mt-[10vh] text-[3vw] line-height-[5vw] text-uppercase">
           Outside of programming, you can find me...
         </motion.h1>
-        <p className="mt-15 text-[6vw] font-bold text-uppercase text-white w-full">
+        <p className="mt-15 text-[5.8vw] font-bold text-uppercase text-white w-full">
           {description1.split("").map((letter: string, i: number) => {
             const y = useTransform(
               scrollYProgress,
@@ -106,7 +106,7 @@ const AboutParallax = () => {
         <motion.h1 className="m-0 mt-[10px] text-[3vw] line-height-[5vw] text-uppercase">
           Or looking down below...
         </motion.h1>
-        <p className="mt-20 text-[6vw] font-bold text-uppercase text-white w-full">
+        <p className="mt-20 text-[5.8vw] font-bold text-uppercase text-white w-full">
           {description2.split("").map((letter: string, i: number) => {
             const y = useTransform(
               scrollYProgress,

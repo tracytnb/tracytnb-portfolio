@@ -78,7 +78,7 @@ const Projects = () => {
           {/* Top */}
           <div className="text-left w-full space-y-4">
             <p>{projectsData[selectedProject].tools.join(", ")}</p>
-            <p className="font-bold text-accent">
+            <p className="font-bold text-[1.4vw] text-white">
               {projectsData[selectedProject].role}
             </p>
           </div>

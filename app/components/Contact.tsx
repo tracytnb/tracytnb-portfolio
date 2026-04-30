@@ -24,23 +24,31 @@ const Contact = () => {
           <div className="flex flex-col gap-8 w-2/5 px-5 pr-20">
             <p className="text-2xl md:text-3xl text-foreground font-semibold leading-relaxed">
               Based in{" "}
-              <span className="text-accent font-bold">Honolulu, HI</span>,
-              I&apos;m excited to collaborate and create meaningful and
+              <span className="text-white font-bold text-[1.4vw]">
+                Honolulu, HI
+              </span>
+              , I&apos;m excited to collaborate and create meaningful and
               enjoyable solutions. I am always striving to learn and grow from
               others and see what kind of craft we both can bring to the table.
             </p>
 
             <div className="flex flex-col text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
               <p>
-                <span className="text-accent font-bold">Status:</span> Open to
-                opportunities{" "}
+                <span className="text-white font-bold text-[1.4vw]">
+                  Status:
+                </span>{" "}
+                Open to opportunities{" "}
               </p>
               <p>
-                <span className="text-accent font-bold">Available:</span>{" "}
+                <span className="text-white font-bold text-[1.4vw]">
+                  Available:
+                </span>{" "}
                 Immediately{" "}
               </p>
               <p>
-                <span className="text-accent font-bold">Location:</span>{" "}
+                <span className="text-white font-bold text-[1.4vw]">
+                  Location:
+                </span>{" "}
                 Honolulu or Remote
               </p>
             </div>

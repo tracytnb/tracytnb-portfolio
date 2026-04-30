@@ -206,11 +206,18 @@ const Header = () => {
           >
             <h2 className="text-2xl font-bold md:text-3xl text-background">
               A developer with a passion for creating{" "}
-              <StaggerText>beautiful</StaggerText>
+              <span className="text-white font-bold text-[1.5vw]">
+                beautiful
+              </span>
               {", "}
-              <StaggerText>scalable</StaggerText>
+              <span className="text-white font-bold text-[1.5vw]">
+                scalable
+              </span>
               {", and "}
-              <StaggerText>user-centered</StaggerText> web applications
+              <span className="text-white font-bold text-[1.5vw]">
+                user-centered
+              </span>{" "}
+              web applications
             </h2>
           </motion.div>
 
@@ -223,14 +230,6 @@ const Header = () => {
               >
                 CONTACT
               </motion.a>
-              {/* <motion.a
-                href="/Resume_Tracy_Bui.pdf"
-                download
-                variants={headerItemVariants}
-                className="inline-flex shrink-0 items-center gap-2 border-2 border-white/50 text-white font-bold px-10 py-3"
-              >
-                RESUME
-              </motion.a> */}
             </div>
           </motion.div>
         </div>

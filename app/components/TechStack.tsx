@@ -82,7 +82,7 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
+          <h4 className="text-xl md:text-2xl text-left mb-2 mt-4 text-white">
             Languages & Databases
           </h4>
         </div>
@@ -100,7 +100,7 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
+          <h4 className="text-xl md:text-2xl text-left mb-2 mt-4 text-white">
             Frameworks & Libraries
           </h4>
         </div>
@@ -121,7 +121,7 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl font-ranchers text-left mb-2 mt-4">
+          <h4 className="text-xl md:text-2xl text-left mb-2 mt-4 text-white">
             Tools
           </h4>
         </div>

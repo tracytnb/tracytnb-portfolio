@@ -62,9 +62,9 @@ const TechStack = () => {
       <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-4">
         Stack/
       </h2>
-      <div className="grid grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto pb-20 md:grid-cols-[repeat(3,max-content)] gap-x-1">
+      <div className="grid grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto pb-20 md:grid-cols-[repeat(3,max-content)] gap-x-2">
         <div className="flex flex-col gap-3 mt-auto items-center justify-center">
-          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
+          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "typescript",
               "js",
@@ -88,7 +88,7 @@ const TechStack = () => {
         </div>
 
         <div className="flex flex-col gap-3 mt-auto items-center">
-          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
+          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "nodejs",
               "expressjs",
@@ -106,7 +106,7 @@ const TechStack = () => {
         </div>
 
         <div className="flex flex-col gap-3 mt-auto items-center">
-          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] gap-x-0">
+          <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "git",
               "github",

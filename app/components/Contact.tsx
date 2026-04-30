@@ -1,9 +1,11 @@
-import Footer from "./Footer";
 import TextDisperse from "./TextDisperse";
 
 const Contact = () => {
   return (
-    <section id="contact" className="flex min-h-dvh w-full flex-col gap-4 pt-3">
+    <section
+      id="contact"
+      className="flex min-h-dvh w-full flex-col gap-4 pt-10"
+    >
       <h2 className="text-4xl md:text-5xl text-white font-semibold leading-relaxed">
         Contact/
       </h2>
@@ -11,7 +13,7 @@ const Contact = () => {
         // Want to collaborate on something?
       </p>
 
-      <div className="flex flex-col gap-10 w-full mt-10">
+      <div className="flex flex-col gap-10 w-full mt-8">
         <div className="flex flex-row gap-10">
           {/* More About Me */}
           <img
@@ -55,7 +57,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 w-2/5 mt-auto ml-auto mr-15 ">
+        <div className="flex flex-col gap-3 w-2/5 mt-auto ml-auto mr-15">
           <a href="mailto:tbui00.tb@gmail.com">
             <TextDisperse>
               <p>tbui00.tb@gmail.com</p>
@@ -82,8 +84,6 @@ const Contact = () => {
           </a>
         </div>
       </div>
-
-      <Footer />
     </section>
   );
 };

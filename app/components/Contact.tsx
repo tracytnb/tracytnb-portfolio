@@ -11,7 +11,7 @@ const Contact = () => {
         // Want to collaborate on something?
       </p>
 
-      <div className="flex flex-col gap-10 w-full mt-30">
+      <div className="flex flex-col gap-10 w-full mt-10">
         <div className="flex flex-row gap-10">
           {/* More About Me */}
           <img
@@ -47,7 +47,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 w-2/5 mt-auto ml-auto mr-15 pt-10">
+        <div className="flex flex-col gap-3 w-2/5 mt-auto ml-auto mr-15 ">
           <a href="mailto:tbui00.tb@gmail.com">
             <TextDisperse>
               <p>tbui00.tb@gmail.com</p>

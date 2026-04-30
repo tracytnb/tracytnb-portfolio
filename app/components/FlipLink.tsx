@@ -19,6 +19,7 @@ const FlipLink = ({
         "relative block overflow-hidden whitespace-nowrap text-white",
         className,
       )}
+      style={{ lineHeight: "0.80" }}
     >
       {/* Single stagger */}
       <motion.div

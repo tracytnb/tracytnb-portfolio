@@ -133,7 +133,7 @@ const Header = () => {
   return (
     <div
       id="top"
-      className="w-full bg-[url('/beach_photo.jpg')] bg-cover bg-center bg-no-repeat"
+      className="w-full bg-[url('/beach_photo.JPG')] bg-cover bg-center bg-no-repeat"
     >
       <motion.div
         className="mx-auto flex min-h-screen w-11/12 flex-col pt-8 pb-10 md:pb-14"

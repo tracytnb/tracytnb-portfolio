@@ -76,11 +76,11 @@ h6 {
   font-family: var(--font-boldonse-loaded), sans-serif;
 }
 
-body {
-  font-family: var(--font-montserrat-loaded), sans-serif;
-}
-
 :root {
+  --cursor-ulua: url("/ulua_mouse.png") 0 0, auto;
+  --cursor-humu: url("/humu_mouse.png") 0 0, auto;
+  --cursor-active: var(--cursor-ulua);
+
   --background: #141413;
   --foreground: #a4a398;
   --card: oklch(1 0 0);
@@ -113,6 +113,10 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+html[data-fish-cursor="humu"] {
+  --cursor-active: var(--cursor-humu);
 }
 
 .dark {
@@ -156,8 +160,32 @@ body {
     @apply border-border outline-ring/50;
   }
   body {
+    font-family: var(--font-montserrat-loaded), sans-serif;
+    cursor: var(--cursor-active);
     @apply bg-background text-foreground;
   }
+
+  /*
+   * Custom cursor inherits on body but links/buttons/etc. assign their own cursor.
+   */
+  :where(
+    :any-link,
+    button:not(:disabled),
+    summary,
+    select:not(:disabled),
+    label[for],
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    input[type="checkbox"],
+    input[type="radio"],
+    [role="button"],
+    [role="link"][href]
+  ):not(:disabled),
+  .cursor-pointer {
+    cursor: var(--cursor-active) !important;
+  }
+
   html {
     @apply font-sans;
   }

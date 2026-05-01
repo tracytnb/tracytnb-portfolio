@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 
 const loadEase = [0.2, 1, 0.3, 1] as const;
-
 const headerLoadVariants = {
   hidden: {},
   show: {
@@ -114,63 +114,21 @@ const RotatingGreeting = () => {
   );
 };
 
-const DURATION = 0.25;
-const STAGGER = 0.045;
-
-const StaggerText = ({ children }: { children: string }) => {
-  return (
-    <motion.span
-      initial="initial"
-      whileHover="hovered"
-      className="relative inline-block overflow-hidden whitespace-nowrap align-baseline text-white font-bold"
-      style={{ lineHeight: 0.75 }}
-    >
-      {/* Rest state: visible “static” line until hover */}
-      <motion.span className="inline-block" aria-hidden>
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: { y: 0 },
-              hovered: { y: "-100%" },
-            }}
-            key={i}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-          >
-            {l}
-          </motion.span>
-        ))}
-      </motion.span>
-      <motion.span className="absolute inset-0 overflow-hidden" aria-hidden>
-        {children.split("").map((l, i) => (
-          <motion.span
-            variants={{
-              initial: { y: "100%" },
-              hovered: { y: 0 },
-            }}
-            key={i}
-            transition={{
-              duration: DURATION,
-              ease: "easeInOut",
-              delay: STAGGER * i,
-            }}
-            className="inline-block"
-          >
-            {l}
-          </motion.span>
-        ))}
-      </motion.span>
-      <span className="sr-only">{children}</span>
-    </motion.span>
-  );
-};
+type FishCursor = "ulua" | "humu";
 
 const Header = () => {
   const reduceMotion = useReducedMotion();
+  const [cursor, setCursor] = useState<FishCursor>("ulua");
+
+  const handleCursorChange = (next: FishCursor) => {
+    setCursor(next);
+    if (typeof document === "undefined") return;
+    if (next === "humu") {
+      document.documentElement.setAttribute("data-fish-cursor", "humu");
+    } else {
+      document.documentElement.removeAttribute("data-fish-cursor");
+    }
+  };
 
   return (
     <div
@@ -232,6 +190,47 @@ const Header = () => {
               </motion.a>
             </div>
           </motion.div>
+
+          <div className="gap-1 w-1/8 ml-auto mt-auto pr-8">
+            <div className="text-right">
+              <button
+                type="button"
+                aria-pressed={cursor === "ulua"}
+                className="font-bold text-black hover:scale-110 transition-all duration-300"
+                onClick={() => handleCursorChange("ulua")}
+              >
+                <Image
+                  src="/ulua_photo.png"
+                  alt="Humu"
+                  width={90}
+                  height={90}
+                />
+                <span className="text-black">Ulua</span>
+              </button>
+
+              <button
+                type="button"
+                aria-pressed={cursor === "humu"}
+                className="font-bold text-black hover:scale-110 transition-all duration-300"
+                onClick={() => handleCursorChange("humu")}
+              >
+                <Image
+                  src="/humu_photo.png"
+                  alt="Humu"
+                  width={60}
+                  height={60}
+                />
+                <span className="text-black">Humu</span>
+              </button>
+
+              <div className="ml-auto text-right pt-2">
+                <div className="border border-white w-full"></div>
+                <p className="text-white font-bold text-md">
+                  Choose your fish friend!
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.div>
     </div>

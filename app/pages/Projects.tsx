@@ -4,7 +4,7 @@ import { projectsData } from "@/assets/assets";
 import { useRef, useLayoutEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import FlipLink from "./FlipLink";
+import FlipLink from "../components/FlipLink";
 import { ExternalLink } from "lucide-react";
 
 const Projects = () => {

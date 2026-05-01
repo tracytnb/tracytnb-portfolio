@@ -1,4 +1,4 @@
-import TextDisperse from "./TextDisperse";
+import TextDisperse from "../components/TextDisperse";
 
 const Contact = () => {
   return (
@@ -37,8 +37,9 @@ const Contact = () => {
             <p className="text-lg md:text-[1.2vw] text-foreground font-semibold leading-snug">
               I’m committed to developing software that is both practical and
               engaging to use, with a strong focus on user experience and
-              thoughtful design. I enjoy finding creative ways to solve problems
-              while incorporating modern technologies and best practices.
+              thoughtful design. I delight in finding creative ways to solve
+              problems while incorporating modern technologies and best
+              practices.
             </p>
 
             <div className="flex flex-col text-lg md:text-xl text-foreground font-semibold leading-snug">

@@ -4,17 +4,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 import { useLayoutEffect, useState } from "react";
-import Header from "./components/Header";
-import About from "./components/About";
-import AboutParallax from "./components/AboutParallax";
-import TechStack from "./components/TechStack";
-import Work from "@/app/components/Work";
+import Header from "./pages/Header";
+import AboutParallax from "./pages/AboutParallax";
+import TechStack from "./pages/TechStack";
+import Work from "@/app/pages/Work";
 // import Project from "./components/Project";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import FishingHook from "./components/FishingHook";
 import VerticalNavigation from "./components/VerticalNavigation";
-import Footer from "./components/Footer";
+import Footer from "./pages/Footer";
 
 export default function Home() {
   const [railHovered, setRailHovered] = useState(false);

@@ -6,10 +6,10 @@ const Contact = () => {
       id="contact"
       className="flex min-h-dvh w-full flex-col gap-4 pt-10"
     >
-      <h2 className="text-4xl md:text-5xl text-white font-semibold leading-relaxed">
+      <h2 className="text-4xl md:text-5xl text-white font-semibold leading-snug">
         Contact/
       </h2>
-      <p className="text-xl md:text-3xl text-white font-semibold leading-relaxed">
+      <p className="text-xl md:text-3xl text-white font-semibold leading-snug">
         // Want to collaborate on something?
       </p>
 
@@ -23,32 +23,39 @@ const Contact = () => {
             width={300}
             height={300}
           />
-          <div className="flex flex-col gap-8 w-2/5 px-5 pr-20">
-            <p className="text-2xl md:text-3xl text-foreground font-semibold leading-relaxed">
+          <div className="flex flex-col gap-6 w-2/5 px-5 pr-20">
+            <p className="text-lg md:text-[1.2vw] text-foreground font-semibold leading-snug">
               Based in{" "}
-              <span className="text-white font-bold text-[1.4vw]">
+              <span className="text-white font-bold text-[1.1vw]">
                 Honolulu, HI
               </span>
-              , I&apos;m excited to collaborate and create meaningful and
-              enjoyable solutions. I am always striving to learn and grow from
-              others and see what kind of craft we both can bring to the table.
+              , I enjoy collaborating to create meaningful and impactful
+              solutions while continuously learning from others and contributing
+              my own perspective and skills.
             </p>
 
-            <div className="flex flex-col text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
+            <p className="text-lg md:text-[1.2vw] text-foreground font-semibold leading-snug">
+              I’m committed to developing software that is both practical and
+              engaging to use, with a strong focus on user experience and
+              thoughtful design. I enjoy finding creative ways to solve problems
+              while incorporating modern technologies and best practices.
+            </p>
+
+            <div className="flex flex-col text-lg md:text-xl text-foreground font-semibold leading-snug">
               <p>
-                <span className="text-white font-bold text-[1.4vw]">
+                <span className="text-white font-bold text-[1.1vw]">
                   Status:
                 </span>{" "}
                 Open to opportunities{" "}
               </p>
               <p>
-                <span className="text-white font-bold text-[1.4vw]">
+                <span className="text-white font-bold text-[1.1vw]">
                   Available:
                 </span>{" "}
                 Immediately{" "}
               </p>
               <p>
-                <span className="text-white font-bold text-[1.4vw]">
+                <span className="text-white font-bold text-[1.1vw]">
                   Location:
                 </span>{" "}
                 Honolulu or Remote
@@ -80,7 +87,6 @@ const Contact = () => {
             <TextDisperse>
               <p>→ Resume</p>
             </TextDisperse>
-            <p className="text-sm pl-15">Last Updated: 04/29/2026</p>
           </a>
         </div>
       </div>

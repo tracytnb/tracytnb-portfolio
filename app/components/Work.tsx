@@ -46,7 +46,7 @@ const Work = () => {
       style={{ height: `${workData.length * 100}vh` }}
     >
       <div className="sticky top-0 flex h-dvh min-h-0 flex-col gap-4">
-        <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-4">
+        <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-1">
           Work/
         </h2>
         <div

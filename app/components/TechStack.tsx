@@ -34,7 +34,7 @@ function TiltStackCell({ name }: { name: string }) {
           transform: "rotateY(25deg)",
           transformStyle: "preserve-3d",
         }}
-        className="relative aspect-square w-35 h-35 size-35 bg-linear-to-br from-white/5 to-foreground/20 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
+        className="relative aspect-square w-35 h-35 size-35 bg-linear-to-br from-white/1 to-foreground/15 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
       >
         <div
           style={{
@@ -59,7 +59,7 @@ const TechStack = () => {
       id="techstack"
       className="relative w-11/12 mx-auto h-screen -left-18 flex flex-col gap-10"
     >
-      <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-4">
+      <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-1">
         Stack/
       </h2>
       <div className="grid grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto pb-20 md:grid-cols-[repeat(3,max-content)] gap-x-2">

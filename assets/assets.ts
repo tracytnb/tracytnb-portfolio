@@ -74,7 +74,7 @@ export const projectsData = [
       "Firestore",
     ],
     description:
-      "Woven with Love is a e-commerce platform for a local business based in Kauai, Hawaii. It is a platform for the client to sell their handwoven leis and various flower products to help promote their business.",
+      "Woven with Love is an e-commerce platform for a local business based in Kauai, Hawaii. It is a platform for the client to sell their handwoven leis and various flower products to help promote their business.",
     role: "Full Stack Developer",
     roleBullets: [
       "Owned full-stack delivery: designed and implemented frontend, backend, and UI/UX.",

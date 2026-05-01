@@ -199,23 +199,23 @@ const Header = () => {
 
         <div className="min-h-0 flex-1" aria-hidden />
 
-        <div className="flex h-fit w-full flex-row flex-wrap gap-x-6 md:mb-30">
+        <div className="flex h-fit w-full flex-row flex-wrap gap-x-6 md:mb-15">
           <motion.div
             variants={headerItemVariants}
-            className="min-w-0 max-w-xs flex-1"
+            className="min-w-0 max-w-[18vw] flex-1"
           >
             <h2 className="text-2xl font-bold md:text-3xl text-background">
               A developer with a passion for creating{" "}
               <span className="text-white font-bold text-[1.5vw]">
-                beautiful
+                scalable
               </span>
               {", "}
               <span className="text-white font-bold text-[1.5vw]">
-                scalable
+                intuitive
               </span>
               {", and "}
               <span className="text-white font-bold text-[1.5vw]">
-                user-centered
+                accessible user-centered
               </span>{" "}
               web applications
             </h2>

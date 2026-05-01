@@ -54,7 +54,7 @@ const Projects = () => {
 
         <p className="md:text-3xl text-white/95 font-semibold leading-relaxed">
           // A selection of projects ranging from different domains such as
-          startup, e-commerce, and research.
+          startup, e-commerce, and research
         </p>
       </div>
       {/* Project Description */}
@@ -92,28 +92,24 @@ const Projects = () => {
       <div className="-mt-[230px] flex flex-col z-10">
         {projectsData.map((project, index) => {
           return (
-            <div
+            <FlipLink
               key={`p_${index}`}
-              onClick={() => {
-                window.open(project.link || "", "_blank");
-              }}
-              className="flex justify-end border-b-2 pb-1 border-white text-white text-[5vw] mt-[25px] mb-[10px] font-bold"
+              href={project.link}
+              className="group mt-[25px] mb-[10px] flex w-full justify-end border-b-2 border-white pb-1 text-[5vw] font-bold text-white"
             >
-              <FlipLink href={project.link || ""} className="group">
-                <div
-                  onMouseOver={() => {
-                    setSelectedProject(index);
-                  }}
-                  className="flex flex-row gap-4 items-center"
-                >
-                  <ExternalLink
-                    aria-hidden
-                    className="mb-8 h-12 w-12 shrink-0 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
-                  />
-                  <p>{project.title}</p>
-                </div>
-              </FlipLink>
-            </div>
+              <div
+                onMouseOver={() => {
+                  setSelectedProject(index);
+                }}
+                className="flex flex-row items-center gap-4"
+              >
+                <ExternalLink
+                  aria-hidden
+                  className="mb-8 h-12 w-12 shrink-0 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+                />
+                <p>{project.title}</p>
+              </div>
+            </FlipLink>
           );
         })}
       </div>

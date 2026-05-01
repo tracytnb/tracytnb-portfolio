@@ -82,7 +82,7 @@ body {
 
 :root {
   --background: #141413;
-  --foreground: #c9c8bf;
+  --foreground: #a4a398;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

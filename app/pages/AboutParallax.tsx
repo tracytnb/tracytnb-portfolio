@@ -37,30 +37,24 @@ const AboutParallax = () => {
     {
       src: "/fish.jpg",
       y: 0,
-      top: "4vh",
-      left: "30vw",
     },
     {
       src: "/shell.jpg",
       y: lgBot,
-      top: "37vh",
-      left: "52vw",
     },
     {
       src: "/opihi.jpg",
       y: mdBot,
-      top: "12vh",
-      left: "19vw",
     },
   ];
 
   return (
     <motion.section ref={container} id="about" className="w-11/12 mx-auto">
       <div className="pt-8">
-        <motion.h1 className="m-0 mt-[10vh] text-[3vw] line-height-[5vw] text-uppercase">
+        <motion.h1 className="m-0 mt-[10vh] text-[5vw] sm:text-[5vw] md:text-[3vw] line-height-[5vw] text-uppercase">
           Outside of programming, you can find me...
         </motion.h1>
-        <p className="mt-15 text-[5.8vw] font-bold text-uppercase text-white w-full">
+        <p className="mt-15 text-[6vw] sm:text-[6vw] md:text-[5.8vw] font-bold text-uppercase text-white w-full">
           {description1.split("").map((letter: string, i: number) => {
             const y = useTransform(
               scrollYProgress,
@@ -81,7 +75,7 @@ const AboutParallax = () => {
         </p>
       </div>
 
-      <div className="relative mt-[11vh] flex h-[65vh] w-full justify-center">
+      <div className="relative mt-[3vh] sm:mt-[3vh] md:mt-[11vh] flex h-[65vh] w-full justify-center">
         {imagesTop.map(({ src, y }, i) => {
           return (
             <motion.div
@@ -103,10 +97,10 @@ const AboutParallax = () => {
 
       {/* Second Section */}
       <div className="w-full mt-[15vh]">
-        <motion.h1 className="m-0 mt-[10px] text-[3vw] line-height-[5vw] text-uppercase">
+        <motion.h1 className="m-0 mt-[10vh] text-[5vw] sm:text-[5vw] md:text-[3vw] line-height-[5vw] text-uppercase">
           Or looking down below...
         </motion.h1>
-        <p className="mt-20 text-[5.8vw] font-bold text-uppercase text-white w-full">
+        <p className="mt-20 text-[6vw] sm:text-[6vw] md:text-[5.8vw] font-bold text-uppercase text-white w-full">
           {description2.split("").map((letter: string, i: number) => {
             const y = useTransform(
               scrollYProgress,
@@ -128,12 +122,12 @@ const AboutParallax = () => {
       </div>
 
       <div className="relative mt-[5vh] flex h-[65vh] w-full justify-center">
-        {imagesBot.map(({ src, y, top, left }, i) => {
+        {imagesBot.map(({ src, y }, i) => {
           return (
             <motion.div
-              style={{ y, top, left }}
+              style={{ y }}
               key={`i_${i}`}
-              className="image-container"
+              className="image-container-bottom"
             >
               <Image
                 src={src}

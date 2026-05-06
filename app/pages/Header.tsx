@@ -82,7 +82,7 @@ const RotatingGreeting = () => {
 
   return (
     <div
-      className="relative sm:text-8xl md:text-9xl"
+      className="relative text-5xl sm:text-6xl md:text-9xl"
       aria-live="polite"
       aria-atomic="true"
     >
@@ -136,7 +136,7 @@ const Header = () => {
       className="w-full bg-[url('/beach_photo.JPG')] bg-cover bg-center bg-no-repeat"
     >
       <motion.div
-        className="mx-auto flex min-h-screen w-11/12 flex-col pt-8 pb-10 md:pb-14"
+        className="mx-auto flex min-h-dvh w-11/12 flex-col pt-6 pb-6 sm:pt-8 sm:pb-10 md:pb-14"
         variants={headerLoadVariants}
         initial={reduceMotion ? false : "hidden"}
         animate={reduceMotion ? false : "show"}
@@ -150,29 +150,29 @@ const Header = () => {
 
         <motion.h1
           variants={headerItemVariants}
-          className="text-8xl font-bold md:text-9xl text-background"
+          className="text-6xl font-bold sm:text-6xl md:text-9xl text-background"
         >
           I&apos;M <span className="text-white">TRACY</span>
         </motion.h1>
 
-        <div className="min-h-0 flex-1" aria-hidden />
+        <div className="min-h-0 md:block md:flex-1" aria-hidden />
 
-        <div className="flex h-fit w-full flex-row flex-wrap gap-x-6 md:mb-15">
+        <div className="flex h-fit sm:w-full flex-col md:flex-row flex-wrap gap-x-6 mt-70 sm:mt-70 md:mb-15 sm:flex-col">
           <motion.div
             variants={headerItemVariants}
-            className="min-w-0 max-w-[18vw] flex-1"
+            className="min-w-0 md:max-w-[18vw] flex-1"
           >
-            <h2 className="text-2xl font-bold md:text-3xl text-background">
+            <h2 className="text-xl font-bold md:text-3xl text-background">
               A developer with a passion for creating{" "}
-              <span className="text-white font-bold text-[1.5vw]">
+              <span className="text-white font-bold sm:text-xl md:text-[1.5vw]">
                 scalable
               </span>
               {", "}
-              <span className="text-white font-bold text-[1.5vw]">
+              <span className="text-white font-bold sm:text-xl md:text-[1.5vw]">
                 intuitive
               </span>
               {", and "}
-              <span className="text-white font-bold text-[1.5vw]">
+              <span className="text-white font-bold sm:text-xl md:text-[1.5vw]">
                 accessible user-centered
               </span>{" "}
               web applications
@@ -180,18 +180,18 @@ const Header = () => {
           </motion.div>
 
           <motion.div className="self-end" variants={headerItemVariants}>
-            <div className="flex flex-row flex-wrap items-center gap-4">
+            <div className="flex flex-col md:flex-row flex-wrap items-center gap-4 sm:mt-10 mt-10">
               <motion.a
                 href="#contact"
                 variants={headerItemVariants}
-                className="inline-flex shrink-0 items-center gap-2 bg-white px-10 py-3 font-bold text-black"
+                className="inline-flex shrink-0 items-center gap-2 bg-white px-10 py-3 font-bold text-black "
               >
                 CONTACT
               </motion.a>
             </div>
           </motion.div>
 
-          <div className="gap-1 w-1/8 ml-auto mt-auto pr-8">
+          <div className="hidden gap-1 w-1/8 ml-auto mt-auto pr-8 md:block">
             <div className="text-right">
               <button
                 type="button"

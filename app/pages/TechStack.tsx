@@ -34,17 +34,17 @@ function TiltStackCell({ name }: { name: string }) {
           transform: "rotateY(25deg)",
           transformStyle: "preserve-3d",
         }}
-        className="relative aspect-square w-35 h-35 size-35 bg-linear-to-br from-white/1 to-foreground/15 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
+        className="relative aspect-square size-21 md:size-35 bg-linear-to-br from-white/1 to-foreground/15 flex flex-col items-center justify-center gap-2 cursor-pointer transition-none"
       >
         <div
           style={{
             transform: "translateZ(75px)",
             transformStyle: "preserve-3d",
           }}
-          className="absolute inset-8 flex flex-col items-center justify-center gap-2"
+          className="absolute inset-4 md:inset-8 flex flex-col items-center justify-center gap-1 md:gap-2"
         >
-          <StackIcon name={name} className="w-12 h-12 size-12" />{" "}
-          <p className="text-md font-semibold">
+          <StackIcon name={name} className="size-7 md:size-12" />{" "}
+          <p className="text-[12px] sm:text-[10px] md:text-[14px] leading-tight font-semibold">
             {name.charAt(0).toUpperCase() + name.slice(1)}
           </p>
         </div>
@@ -57,13 +57,13 @@ const TechStack = () => {
   return (
     <div
       id="techstack"
-      className="relative w-11/12 mx-auto h-screen -left-18 flex flex-col gap-10"
+      className="relative w-11/12 mx-auto h-screen md:-left-18 flex flex-col gap-10"
     >
       <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-1">
         Stack/
       </h2>
-      <div className="grid grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto pb-20 md:grid-cols-[repeat(3,max-content)] gap-x-2">
-        <div className="flex flex-col gap-3 mt-auto items-center justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto pb-20 gap-x-2 gap-y-4">
+        <div className="flex flex-col md:gap-3 mt-auto items-center justify-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "typescript",
@@ -82,12 +82,12 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl text-left mb-2 mt-4 text-white">
+          <h4 className="text-xl md:text-2xl text-left mb-4 md:mt-4 text-white">
             Languages & Databases
           </h4>
         </div>
 
-        <div className="flex flex-col gap-3 mt-auto items-center">
+        <div className="flex flex-col md:gap-3 mt-auto items-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "nodejs",
@@ -100,12 +100,12 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl text-left mb-2 mt-4 text-white">
+          <h4 className="text-xl md:text-2xl text-left mb-4 md:mt-4 text-white">
             Frameworks & Libraries
           </h4>
         </div>
 
-        <div className="flex flex-col gap-3 mt-auto items-center">
+        <div className="flex flex-col md:gap-3 mt-auto items-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "git",
@@ -121,7 +121,7 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl text-left mb-2 mt-4 text-white">
+          <h4 className="text-xl md:text-2xl text-left mb-4 md:mt-4 text-white">
             Tools
           </h4>
         </div>

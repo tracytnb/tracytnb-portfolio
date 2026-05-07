@@ -7,13 +7,34 @@ const FlipLink = ({
   className,
   target = "_blank",
   rel = "noopener noreferrer",
+  disableHoverReveal = false,
 }: {
   children: React.ReactNode | string;
   href: string;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
   rel?: string;
+  disableHoverReveal?: boolean;
 }) => {
+  if (disableHoverReveal) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={clsx(
+          "relative block overflow-hidden whitespace-nowrap text-white",
+          className,
+        )}
+        style={{ lineHeight: "0.80" }}
+      >
+        <span className="flex w-full justify-end overflow-hidden">
+          {children}
+        </span>
+      </a>
+    );
+  }
+
   return (
     <motion.a
       initial="initial"

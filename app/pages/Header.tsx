@@ -9,26 +9,26 @@ const headerLoadVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.35,
-      delayChildren: 0.1,
+      staggerChildren: 0.16,
+      delayChildren: 0,
     },
   },
 };
 
 const headerItemVariants = {
-  hidden: { opacity: 0, y: 22 },
+  hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: loadEase },
+    transition: { duration: 0.45, ease: loadEase },
   },
 };
 
 const greetingText = ["ALOHA,", "HELLO,", "HOWZIT,", "XIN CHÀO,"];
 
 const GREETING_INTERVAL_MS = 2400;
-const GREETING_SLIDE_DURATION = 0.9;
-const LETTER_STAGGER = 0.12;
+const GREETING_SLIDE_DURATION = 0.6;
+const LETTER_STAGGER = 0.08;
 
 const greetingContainerVariants = {
   hidden: {},
@@ -131,12 +131,19 @@ const Header = () => {
   };
 
   return (
-    <div
-      id="top"
-      className="w-full bg-[url('/beach_photo.JPG')] bg-cover bg-center bg-no-repeat"
-    >
+    <div id="top" className="relative w-full overflow-hidden">
+      <Image
+        src="/beach_photo.JPG"
+        alt="Beach background"
+        fill
+        priority
+        unoptimized
+        quality={100}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+        className="object-cover object-center"
+      />
       <motion.div
-        className="mx-auto flex min-h-dvh w-11/12 flex-col pt-6 pb-6 sm:pt-8 sm:pb-10 md:pb-14 md:h-screen md:min-h-0"
+        className="relative z-10 mx-auto flex min-h-dvh w-11/12 flex-col pt-6 pb-6 sm:pt-8 sm:pb-10 md:pb-14 md:h-screen md:min-h-0"
         variants={headerLoadVariants}
         initial={reduceMotion ? false : "hidden"}
         animate={reduceMotion ? false : "show"}

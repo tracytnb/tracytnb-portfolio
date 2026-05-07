@@ -55,7 +55,7 @@ export default function Home() {
         <Contact />
       </div>
       <Footer />
-      <div className="pointer-events-none fixed right-4 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end md:right-8">
+      <div className="pointer-events-none fixed right-1 md:right-1 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end">
         <div
           className="pointer-events-auto relative h-full w-20 shrink-0"
           onMouseEnter={() => setRailHovered(true)}

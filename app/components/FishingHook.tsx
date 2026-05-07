@@ -21,7 +21,7 @@ function hookTransformAttr(endY: number, scale: number) {
 }
 
 const HOOK_SCALE_MOBILE = 0.6;
-const HOOK_SCALE_DESKTOP = 1;
+const HOOK_SCALE_DESKTOP = 0.8;
 
 export default function FishingHook() {
   const { scrollYProgress } = useScroll();
@@ -51,7 +51,6 @@ export default function FishingHook() {
     return `M 50 0 C 50 0 50 ${ey} 50 ${ey}`;
   });
 
-  /** SVG `transform` must be a real attribute string — MotionValues in `style` on `<g>` often fail to render. */
   const [hookTransform, setHookTransform] = useState(() =>
     hookTransformAttr(LINE_END_Y_MIN, HOOK_SCALE_DESKTOP),
   );

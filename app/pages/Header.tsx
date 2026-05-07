@@ -82,7 +82,7 @@ const RotatingGreeting = () => {
 
   return (
     <div
-      className="relative text-5xl sm:text-6xl md:text-9xl"
+      className="relative text-8xl sm:text-8xl md:text-9xl"
       aria-live="polite"
       aria-atomic="true"
     >
@@ -150,29 +150,29 @@ const Header = () => {
 
         <motion.h1
           variants={headerItemVariants}
-          className="text-6xl font-bold sm:text-6xl md:text-9xl text-background"
+          className="font-bold text-8xl sm:text-8xl md:text-9xl text-background"
         >
           I&apos;M <span className="text-white">TRACY</span>
         </motion.h1>
 
         <div className="min-h-0 md:block md:flex-1" aria-hidden />
 
-        <div className="flex h-fit sm:w-full flex-col md:flex-row flex-wrap gap-x-6 mt-70 md:mt-0 md:mb-15 sm:flex-col">
+        <div className="flex h-fit sm:w-full flex-col md:flex-row flex-wrap gap-x-6 mt-80 md:mt-0 md:mb-15 sm:flex-col">
           <motion.div
             variants={headerItemVariants}
-            className="min-w-0 md:max-w-[18vw] flex-1"
+            className="min-w-0 md:max-w-[27vw] flex-1 mt-auto"
           >
             <h2 className="text-xl font-bold md:text-3xl text-background">
               A developer with a passion for creating{" "}
-              <span className="text-white font-bold sm:text-xl md:text-[1.5vw]">
+              <span className="text-white font-bold sm:text-xl md:text-3xl">
                 scalable
               </span>
               {", "}
-              <span className="text-white font-bold sm:text-xl md:text-[1.5vw]">
+              <span className="text-white font-bold sm:text-xl md:text-3xl">
                 intuitive
               </span>
               {", and "}
-              <span className="text-white font-bold sm:text-xl md:text-[1.5vw]">
+              <span className="text-white font-bold sm:text-xl md:text-3xl">
                 accessible user-centered
               </span>{" "}
               web applications

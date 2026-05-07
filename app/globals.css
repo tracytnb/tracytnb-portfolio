@@ -217,6 +217,14 @@ html[data-fish-cursor="humu"] {
       height: 60vh;
       width: 50vh;
     }
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      height: 52vh;
+      width: 44vh;
+    }
+    @media (min-width: 1280px) {
+      height: 60vh;
+      width: 50vh;
+    }
   }
   &:nth-of-type(2) {
     left: 50vw;
@@ -230,15 +238,38 @@ html[data-fish-cursor="humu"] {
       height: 40vh;
       width: 30vh;
     }
+    /* Narrow desktop / short-width window: pull in from the right */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      left: 52vw;
+    }
+    @media (min-width: 1280px) {
+      left: 55vw;
+    }
   }
   &:nth-of-type(3) {
+    /* Mobile */
     left: 17vw;
     top: 50vh;
     height: 30vh;
     width: 20vh;
     z-index: 3;
+    /* Tablet */
     @media (min-width: 768px) {
-      left: 22vw;
+      left: 10vw;
+      top: 40vh;
+      height: 35vh;
+      width: 25vh;
+    }
+    /* Compact desktop */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      left: 14vw;
+      top: 40vh;
+      height: 33vh;
+      width: 23vh;
+    }
+    /* Full desktop */
+    @media (min-width: 1280px) {
+      left: 25vw;
       top: 40vh;
       height: 35vh;
       width: 25vh;
@@ -251,35 +282,75 @@ html[data-fish-cursor="humu"] {
   img {
     object-fit: cover;
   }
+  /* Mobile */
   &:nth-of-type(1) {
     height: 30vh;
     width: 35vh;
     top: 5vh;
     z-index: 1;
+    /* Tablet */
     @media (min-width: 768px) {
-      top: 4vh;
-      width: 30vw;
+      height: 60vh;
+      width: 50vh;
+    }
+    /* Compact desktop */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      height: 52vh;
+      width: 44vh;
+    }
+    /* Full desktop */
+    @media (min-width: 1280px) {
+      height: 60vh;
+      width: 50vh;
     }
   }
+  /* Mobile */
   &:nth-of-type(2) {
     left: 52vw;
     top: 52vh;
     height: 18vh;
     width: 18vh;
     z-index: 2;
+    /* Tablet */
     @media (min-width: 768px) {
-      left: 52vw;
+      left: 60vw;
       top: 37vh;
-      width: 15vw;
+      width: 25vw;
+    }
+    /* Narrow desktop */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      left: 60vw;
+      width: 20vw;
+    }
+    /* Full desktop */
+    @media (min-width: 1280px) {
+      left: 55vw;
+      width: 18vw;
     }
   }
   &:nth-of-type(3) {
+    /* Mobile */
     left: 17vw;
     top: 5vh;
     height: 30vh;
     width: 20vh;
     z-index: 3;
+    /* Tablet */
     @media (min-width: 768px) {
+      left: 6vw;
+      top: 13vh;
+      height: 35vh;
+      width: 25vh;
+    }
+    /* Compact desktop */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      left: 18vw;
+      top: 12vh;
+      height: 32vh;
+      width: 22vh;
+    }
+    /* Full desktop */
+    @media (min-width: 1280px) {
       left: 23vw;
       top: 13vh;
       height: 35vh;

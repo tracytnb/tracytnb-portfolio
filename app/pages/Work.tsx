@@ -42,7 +42,7 @@ const Work = () => {
     <motion.section
       ref={sectionRef}
       id="work"
-      className="relative w-11/12 mx-auto -left-18 h-screen"
+      className="relative w-11/12 mx-auto md:-left-18 h-screen"
       style={{ height: `${workData.length * 100}vh` }}
     >
       <div className="sticky top-0 flex h-dvh min-h-0 flex-col gap-4">
@@ -67,7 +67,7 @@ const Work = () => {
                   type="button"
                   onClick={() => scrollToSegment(index)}
                   className={
-                    "relative w-full overflow-hidden p-4 text-left " +
+                    "relative w-full overflow-hidden p-2 sm:p-2 md:p-4 text-left " +
                     (!isOpen ? "hover:bg-black/5 dark:hover:bg-white/5" : "")
                   }
                 >
@@ -83,18 +83,20 @@ const Work = () => {
                   />
                   <div
                     className={
-                      "relative z-10 flex w-full items-center justify-between gap-4 transition-colors duration-300 " +
+                      "relative z-10 flex w-full items-center justify-between md:gap-4 transition-colors duration-300 " +
                       (isOpen ? "text-black" : "text-foreground")
                     }
                   >
                     <div className="flex flex-col items-start min-w-0">
-                      <h3 className="text-2xl md:text-3xl font-ranchers text-left mb-1 shrink-0">
+                      <h3 className="text-md sm:text-md md:text-3xl font-ranchers text-left md:mb-1 shrink-0">
                         {job.title}
                       </h3>
-                      <p className="text-lg opacity-90 font-bold">
+                      <p className="text-sm sm:text-sm md:text-lg opacity-90 font-bold">
                         {job.company}
                       </p>
-                      <p className="text-lg opacity-75">{job.period}</p>
+                      <p className="text-sm sm:text-sm md:text-lg opacity-75">
+                        {job.period}
+                      </p>
                     </div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +120,7 @@ const Work = () => {
                   }`}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <div className="relative px-4 pt-4 p-6">
+                    <div className="relative px-4 p-2 pt-2 sm:pt-2 sm:p-2 md:pt-4 md:p-6">
                       <motion.div
                         aria-hidden
                         className="pointer-events-none absolute inset-0 z-0 border border-foreground origin-top"
@@ -129,7 +131,7 @@ const Work = () => {
                           ease: [0.22, 1, 0.36, 1],
                         }}
                       />
-                      <ul className="relative z-10 list-disc list-inside space-y-4 text-md md:text-lg">
+                      <ul className="relative z-10 list-disc list-inside space-y-1 sm:space-y-1 md:space-y-4 text-sm sm:text-sm md:text-lg">
                         {job.bullets.map((bullet, i) => (
                           <li key={i}>{bullet}</li>
                         ))}

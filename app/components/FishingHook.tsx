@@ -3,15 +3,16 @@
 import { useLayoutEffect, useState } from "react";
 import {
   motion,
+  useMotionValue,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from "motion/react";
 
-/** Line end Y in viewBox units at scroll 0 vs full scroll */
-const LINE_END_Y_MAX = 800;
 const LINE_END_Y_MIN = 400;
-/** Hook sits slightly above the line end (was 840 vs 850). */
+const LINE_END_Y_MAX_DESKTOP = 800;
+const LINE_END_Y_MAX_MOBILE = 550;
+
 const HOOK_ABOVE_LINE = 10;
 
 function hookTransformAttr(endY: number, scale: number) {
@@ -25,23 +26,30 @@ const HOOK_SCALE_DESKTOP = 1;
 export default function FishingHook() {
   const { scrollYProgress } = useScroll();
 
-  const lineEndY = useTransform(scrollYProgress, (p) => {
-    return LINE_END_Y_MIN + p * (LINE_END_Y_MAX - LINE_END_Y_MIN);
-  });
+  /** Drives both the maximum line drop and the hook scale; updated by a single matchMedia listener. */
+  const lineEndYMax = useMotionValue(LINE_END_Y_MAX_DESKTOP);
+  const [hookScale, setHookScale] = useState(HOOK_SCALE_DESKTOP);
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => {
+      lineEndYMax.set(
+        mq.matches ? LINE_END_Y_MAX_MOBILE : LINE_END_Y_MAX_DESKTOP,
+      );
+      setHookScale(mq.matches ? HOOK_SCALE_MOBILE : HOOK_SCALE_DESKTOP);
+    };
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, [lineEndYMax]);
+
+  const lineEndY = useTransform<number, number>(
+    [scrollYProgress, lineEndYMax],
+    ([p, max]) => LINE_END_Y_MIN + p * (max - LINE_END_Y_MIN),
+  );
 
   const linePath = useTransform(lineEndY, (ey) => {
     return `M 50 0 C 50 0 50 ${ey} 50 ${ey}`;
   });
-
-  const [hookScale, setHookScale] = useState(HOOK_SCALE_DESKTOP);
-  useLayoutEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    const sync = () =>
-      setHookScale(mq.matches ? HOOK_SCALE_MOBILE : HOOK_SCALE_DESKTOP);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
 
   /** SVG `transform` must be a real attribute string — MotionValues in `style` on `<g>` often fail to render. */
   const [hookTransform, setHookTransform] = useState(() =>

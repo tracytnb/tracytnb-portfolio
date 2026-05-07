@@ -42,7 +42,7 @@ const Work = () => {
     <motion.section
       ref={sectionRef}
       id="work"
-      className="relative w-11/12 mx-auto md:-left-18 h-screen"
+      className="relative w-11/12 mx-auto md:-left-18 h-screen pr-18 sm:pr-18 md:pr-0"
       style={{ height: `${workData.length * 100}vh` }}
     >
       <div className="sticky top-0 flex h-dvh min-h-0 flex-col gap-4">

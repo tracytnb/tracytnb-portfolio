@@ -136,7 +136,7 @@ const Header = () => {
       className="w-full bg-[url('/beach_photo.JPG')] bg-cover bg-center bg-no-repeat"
     >
       <motion.div
-        className="mx-auto flex min-h-dvh w-11/12 flex-col pt-6 pb-6 sm:pt-8 sm:pb-10 md:pb-14"
+        className="mx-auto flex min-h-dvh w-11/12 flex-col pt-6 pb-6 sm:pt-8 sm:pb-10 md:pb-14 md:h-screen md:min-h-0"
         variants={headerLoadVariants}
         initial={reduceMotion ? false : "hidden"}
         animate={reduceMotion ? false : "show"}
@@ -157,7 +157,7 @@ const Header = () => {
 
         <div className="min-h-0 md:block md:flex-1" aria-hidden />
 
-        <div className="flex h-fit sm:w-full flex-col md:flex-row flex-wrap gap-x-6 mt-70 sm:mt-70 md:mb-15 sm:flex-col">
+        <div className="flex h-fit sm:w-full flex-col md:flex-row flex-wrap gap-x-6 mt-70 md:mt-0 md:mb-15 sm:flex-col">
           <motion.div
             variants={headerItemVariants}
             className="min-w-0 md:max-w-[18vw] flex-1"
@@ -180,18 +180,18 @@ const Header = () => {
           </motion.div>
 
           <motion.div className="self-end" variants={headerItemVariants}>
-            <div className="flex flex-col md:flex-row flex-wrap items-center gap-4 sm:mt-10 mt-10">
+            <div className="flex flex-col md:flex-row flex-wrap items-center gap-4 sm:mt-10 mt-10 mr-18 sm:mr-18 md:pr-0">
               <motion.a
                 href="#contact"
                 variants={headerItemVariants}
-                className="inline-flex shrink-0 items-center gap-2 bg-white px-10 py-3 font-bold text-black "
+                className="inline-flex shrink-0 items-center gap-2 bg-white px-10 py-3 font-bold text-black"
               >
                 CONTACT
               </motion.a>
             </div>
           </motion.div>
 
-          <div className="hidden gap-1 w-1/8 ml-auto mt-auto pr-8 md:block">
+          <div className="hidden gap-1 w-2/8 ml-auto mt-auto pr-20 md:block">
             <div className="text-right">
               <button
                 type="button"

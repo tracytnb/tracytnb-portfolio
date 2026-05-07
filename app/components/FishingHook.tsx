@@ -14,10 +14,13 @@ const LINE_END_Y_MIN = 400;
 /** Hook sits slightly above the line end (was 840 vs 850). */
 const HOOK_ABOVE_LINE = 10;
 
-function hookTransformAttr(endY: number) {
+function hookTransformAttr(endY: number, scale: number) {
   const y = endY - HOOK_ABOVE_LINE;
-  return `translate(0, ${y}) translate(45, 0) scale(-1, 1) translate(-50, 0)`;
+  return `translate(50 ${y}) scale(${scale}) translate(-50 ${-y}) translate(0 ${y}) translate(45 0) scale(-1 1) translate(-50 0)`;
 }
+
+const HOOK_SCALE_MOBILE = 0.6;
+const HOOK_SCALE_DESKTOP = 1;
 
 export default function FishingHook() {
   const { scrollYProgress } = useScroll();
@@ -30,16 +33,26 @@ export default function FishingHook() {
     return `M 50 0 C 50 0 50 ${ey} 50 ${ey}`;
   });
 
+  const [hookScale, setHookScale] = useState(HOOK_SCALE_DESKTOP);
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () =>
+      setHookScale(mq.matches ? HOOK_SCALE_MOBILE : HOOK_SCALE_DESKTOP);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
   /** SVG `transform` must be a real attribute string — MotionValues in `style` on `<g>` often fail to render. */
   const [hookTransform, setHookTransform] = useState(() =>
-    hookTransformAttr(LINE_END_Y_MIN),
+    hookTransformAttr(LINE_END_Y_MIN, HOOK_SCALE_DESKTOP),
   );
   useMotionValueEvent(lineEndY, "change", (endY) => {
-    setHookTransform(hookTransformAttr(endY));
+    setHookTransform(hookTransformAttr(endY, hookScale));
   });
   useLayoutEffect(() => {
-    setHookTransform(hookTransformAttr(lineEndY.get()));
-  }, [lineEndY]);
+    setHookTransform(hookTransformAttr(lineEndY.get(), hookScale));
+  }, [lineEndY, hookScale]);
 
   return (
     <motion.div

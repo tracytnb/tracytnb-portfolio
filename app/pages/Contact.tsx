@@ -25,7 +25,7 @@ const Contact = () => {
               height={300}
             />
             <div className="flex flex-col gap-6 md:w-3/5 lg:w-2/5 md:px-5 pr-20">
-              <p className="text-white/90 text-lg lg:text-[1.2vw] leading-5 sm:leading-5 md:leading-snug">
+              <p className="text-foreground text-lg lg:text-[1.2vw] leading-5 sm:leading-5 md:leading-snug">
                 Based in{" "}
                 <span className="text-white font-bold text-lg sm:text-lg md:text-lg lg:text-[1.1vw]">
                   Honolulu, HI
@@ -35,7 +35,7 @@ const Contact = () => {
                 contributing my own perspective and skills.
               </p>
 
-              <p className="text-white/85 text-lg lg:text-[1.2vw]  leading-5 sm:leading-5 md:leading-snug">
+              <p className="text-foreground text-lg lg:text-[1.2vw] leading-5 sm:leading-5 md:leading-snug">
                 I’m committed to developing software that is both practical and
                 engaging to use, with a strong focus on user experience and
                 thoughtful design. I delight in finding creative ways to solve

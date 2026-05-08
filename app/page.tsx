@@ -66,7 +66,7 @@ export default function Home() {
           className="z-0 object-cover object-center"
         />
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 z-1 h-36 bg-linear-to-b from-background to-transparent sm:h-44 md:h-52"
+          className="pointer-events-none absolute inset-x-0 -top-5 z-1 h-36 bg-linear-to-b from-background to-transparent/50 sm:h-44 md:h-80"
           aria-hidden
         />
         <Contact />

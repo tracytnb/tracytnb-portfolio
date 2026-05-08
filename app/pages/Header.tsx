@@ -199,11 +199,11 @@ const Header = () => {
           </motion.div>
 
           <div className="hidden gap-1 w-2/8 ml-auto mt-auto pr-20 md:block">
-            <div className="text-right">
+            <div className="text-right flex flex-col items-end">
               <button
                 type="button"
                 aria-pressed={cursor === "ulua"}
-                className="font-bold text-black hover:scale-110 transition-all duration-300"
+                className="font-bold text-black hover:scale-110 transition-all duration-300 flex flex-col items-end"
                 onClick={() => handleCursorChange("ulua")}
               >
                 <Image
@@ -218,7 +218,7 @@ const Header = () => {
               <button
                 type="button"
                 aria-pressed={cursor === "humu"}
-                className="font-bold text-black hover:scale-110 transition-all duration-300"
+                className="font-bold text-black hover:scale-110 transition-all duration-300 flex flex-col items-end"
                 onClick={() => handleCursorChange("humu")}
               >
                 <Image
@@ -227,7 +227,7 @@ const Header = () => {
                   width={60}
                   height={60}
                 />
-                <span className="text-black">Humu</span>
+                <span className="text-black">Humuhumunukunukuāpuaʻa</span>
               </button>
 
               <div className="ml-auto text-right pt-2">

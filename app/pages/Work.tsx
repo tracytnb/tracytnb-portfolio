@@ -42,7 +42,7 @@ const Work = () => {
     <motion.section
       ref={sectionRef}
       id="work"
-      className="relative w-11/12 mx-auto md:-left-18 h-screen pr-18 sm:pr-18 md:pr-0"
+      className="relative w-11/12 mx-auto lg:-left-18 h-screen pr-18 sm:pr-18 md:pr-4 lg:pr-0"
       style={{ height: `${workData.length * 100}vh` }}
     >
       <div className="sticky top-0 flex h-dvh min-h-0 flex-col gap-4">
@@ -88,13 +88,13 @@ const Work = () => {
                     }
                   >
                     <div className="flex flex-col items-start min-w-0">
-                      <h3 className="text-md sm:text-md md:text-3xl font-ranchers text-left md:mb-1 shrink-0">
+                      <h3 className="text-md sm:text-md md:text-xl lg:text-3xl font-ranchers text-left md:mb-1 shrink-0">
                         {job.title}
                       </h3>
-                      <p className="text-sm sm:text-sm md:text-lg opacity-90 font-bold">
+                      <p className="text-sm sm:text-sm md:text-lg lg:text-lg opacity-90 font-bold">
                         {job.company}
                       </p>
-                      <p className="text-sm sm:text-sm md:text-lg opacity-75">
+                      <p className="text-sm sm:text-sm md:text-lg lg:text-lg opacity-75">
                         {job.period}
                       </p>
                     </div>
@@ -131,7 +131,7 @@ const Work = () => {
                           ease: [0.22, 1, 0.36, 1],
                         }}
                       />
-                      <ul className="relative z-10 list-disc list-inside space-y-1 sm:space-y-1 md:space-y-4 text-sm sm:text-sm md:text-lg">
+                      <ul className="relative z-10 list-disc list-inside space-y-1 sm:space-y-1 md:space-y-1 lg:space-y-4 text-sm sm:text-sm md:text-[1.7vh] lg:text-lg">
                         {job.bullets.map((bullet, i) => (
                           <li key={i}>{bullet}</li>
                         ))}

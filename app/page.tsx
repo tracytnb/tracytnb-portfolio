@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
+import Image from "next/image";
 import { useLayoutEffect, useState } from "react";
 import Header from "./pages/Header";
 import AboutParallax from "./pages/AboutParallax";
@@ -52,9 +53,27 @@ export default function Home() {
         <Projects />
         <Work />
         <TechStack />
-        <Contact />
       </div>
-      <Footer />
+      <div className="relative mt-24 w-full overflow-hidden sm:mt-24 md:mt-28 lg:mt-32">
+        <Image
+          src="/stars.JPG"
+          alt=""
+          fill
+          priority
+          unoptimized
+          quality={100}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+          className="z-0 object-cover object-center"
+        />
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 z-1 h-36 bg-linear-to-b from-background to-transparent sm:h-44 md:h-52"
+          aria-hidden
+        />
+        <Contact />
+        <div className="relative z-10">
+          <Footer />
+        </div>
+      </div>
       <div className="pointer-events-none fixed right-1 md:-right-2.5 lg:right-1 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end">
         <div
           className="pointer-events-auto relative h-full w-20 shrink-0"

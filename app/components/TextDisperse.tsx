@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { disperse, disperseEase } from "./disperse";
 
 const disperseTextBase =
-  "inline-block origin-left text-4xl sm:text-4xl md:text-6xl leading-tight";
+  "inline-block origin-left text-4xl sm:text-4xl sm:text-5xl lg:text-6xl leading-tight";
 
 function textFromReactNode(node: ReactNode): string {
   if (node == null || typeof node === "boolean") return "";

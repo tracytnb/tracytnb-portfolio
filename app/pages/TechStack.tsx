@@ -57,13 +57,13 @@ const TechStack = () => {
   return (
     <div
       id="techstack"
-      className="relative w-11/12 mx-auto flex min-h-dvh flex-col gap-10 md:h-screen md:-left-18"
+      className="relative w-11/12 mx-auto flex min-h-dvh flex-col gap-10 lg:pb-24 lg:-left-18"
     >
       <h2 className="z-50 text-4xl md:text-5xl text-white font-semibold leading-relaxed pt-1">
         Stack/
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-[repeat(3,max-content)] justify-center items-center mt-auto md:pb-20 gap-x-2 gap-y-4">
-        <div className="flex flex-col md:gap-3 mt-auto items-center justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[repeat(3,max-content)] justify-center items-center gap-x-2 gap-y-8 lg:mt-auto lg:pb-20">
+        <div className="flex flex-col lg:gap-3 lg:mt-auto items-center justify-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "typescript",
@@ -82,12 +82,12 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl text-left mb-4 md:mt-4 text-white">
+          <h4 className="text-xl md:text-2xl text-left mb-4 lg:mt-4 text-white">
             Languages & Databases
           </h4>
         </div>
 
-        <div className="flex flex-col md:gap-3 mt-auto items-center">
+        <div className="flex flex-col lg:gap-3 lg:mt-auto items-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "nodejs",
@@ -100,12 +100,12 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl text-left mb-4 md:mt-4 text-white">
+          <h4 className="text-xl md:text-2xl text-left mb-4 lg:mt-4 text-white">
             Frameworks & Libraries
           </h4>
         </div>
 
-        <div className="flex flex-col md:gap-3 mt-auto items-center">
+        <div className="flex flex-col lg:gap-3 lg:mt-auto items-center">
           <div className="mx-auto grid w-max max-w-full grid-cols-[repeat(3,max-content)] space-x-px space-y-px">
             {[
               "git",
@@ -121,7 +121,7 @@ const TechStack = () => {
               <TiltStackCell key={name} name={name} />
             ))}
           </div>
-          <h4 className="text-xl md:text-2xl text-left mb-4 md:mt-4 text-white">
+          <h4 className="text-xl md:text-2xl text-left mb-4 lg:mt-4 text-white">
             Tools
           </h4>
         </div>

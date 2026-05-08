@@ -9,6 +9,14 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "Portfolio - Tracy Bui",
   description: "",
+  icons: {
+    icon: [
+      {
+        url: "/TB_logo.png",
+        href: "/TB_logo.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

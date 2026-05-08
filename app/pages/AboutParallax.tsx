@@ -49,7 +49,11 @@ const AboutParallax = () => {
   ];
 
   return (
-    <motion.section ref={container} id="about" className="w-11/12 mx-auto">
+    <motion.section
+      ref={container}
+      id="about"
+      className="relative w-11/12 mx-auto"
+    >
       <div className="pt-8">
         <motion.h1 className="m-0 mt-[10vh] text-[5vw] sm:text-[5vw] md:text-[3vw] line-height-[5vw] text-uppercase">
           Outside of programming, you can find me...

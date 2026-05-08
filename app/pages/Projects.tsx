@@ -61,7 +61,7 @@ const Projects = () => {
     <div
       ref={sectionRef}
       id="projects"
-      className="relative flex w-11/12 mx-auto md:-left-18 flex-col overflow-visible pt-[160px] pb-16 md:pb-24"
+      className="relative flex w-11/12 mx-auto lg:-left-18 flex-col overflow-visible pt-[160px] pb-16 md:pb-24 lg:pb-24"
     >
       {/* Project Header */}
       <div className="flex flex-col h-[400px] pb-20 min-h-[400px]">
@@ -69,7 +69,7 @@ const Projects = () => {
           Selected_Projects/
         </h2>
 
-        <p className="text-xl sm:text-xl md:text-3xl text-white/95 font-semibold leading-relaxed">
+        <p className="text-xl sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-semibold leading-relaxed">
           // A selection of projects ranging from different domains such as
           startup, e-commerce, and research
         </p>
@@ -77,30 +77,30 @@ const Projects = () => {
       <div className="flex min-h-[min(100dvh,750px)] flex-col justify-between md:min-h-0 md:justify-start">
         <div
           ref={projectsRowRef}
-          className="relative flex h-auto w-full flex-col items-stretch overflow-visible font-semibold text-[3vw] sm:text-[3vw] md:h-[700px] md:flex-row md:items-start md:text-[1.35vw]"
+          className="relative flex h-auto w-full flex-col items-stretch overflow-visible font-semibold text-[3vw] sm:text-[3vw] md:h-[700px] lg:h-[700px] md:flex-row md:items-start md:text-[1.35vw]"
         >
           {/* Image Container */}
           <div
             ref={imageContainer}
-            className="relative z-10 h-full w-[65vw] shrink-0 self-center overflow-hidden will-change-transform sm:h-full sm:w-[65vw] md:h-full md:w-1/3 md:self-auto"
+            className="relative z-10 h-full w-[65vw] shrink-0 self-center overflow-hidden will-change-transform sm:h-full md:h-full lg:h-full sm:w-[65vw] md:w-[40vw] lg:w-1/3 md:self-auto"
           >
             <img
               src={projectsData[selectedProject].images[0].src}
               alt={projectsData[selectedProject].images[0].name}
-              className="h-full w-full sm:w-full md:w-full object-cover aspect-square sm:aspect-square md:aspect-2/3"
+              className="h-full w-full sm:w-full md:w-[40vw] lg:w-full md:h-[500px] lg:h-full object-cover aspect-square sm:aspect-square lg:aspect-2/3"
             />
           </div>
           {/* Project Details */}
-          <div className="ml-0 flex w-full flex-col md:gap-8 md:ml-auto md:mt-[20px] md:w-3/5">
+          <div className="ml-0 flex w-full flex-col md:gap-8 md:p-8 lg:gap-8 lg:ml-auto lg:mt-[20px] lg:w-3/5">
             {/* Top */}
-            <div className="text-[3vw] sm:text-[3vw] md:text-[1.4vw] text-left w-full md:space-y-4">
+            <div className="text-[3vw] sm:text-[3vw] md:text-[3vw] lg:text-[1.4vw] text-left w-full md:space-y-4 lg:space-y-4">
               <p>{projectsData[selectedProject].tools.join(", ")}</p>
-              <p className="font-bold text-[4vw] sm:text-[4vw] md:text-[1.4vw] text-white">
+              <p className="font-bold text-[4vw] sm:text-[4vw] md:text-[3vw] lg:text-[1.4vw] text-white">
                 {projectsData[selectedProject].role}
               </p>
             </div>
             {/* Bottom */}
-            <div className="w-full sm:w-full md:w-3/5 items-end right-align ml-auto justify-end md:space-y-4 md:mt-[100px]">
+            <div className="w-full sm:w-full md:w-full lg:w-3/5 md:text-xl items-end right-align ml-auto justify-end lg:space-y-4 md:mt-[50px] lg:mt-[100px]">
               <p>{projectsData[selectedProject].description}</p>
             </div>
           </div>

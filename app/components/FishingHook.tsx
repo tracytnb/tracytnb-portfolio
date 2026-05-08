@@ -21,7 +21,7 @@ function hookTransformAttr(endY: number, scale: number) {
 }
 
 const HOOK_SCALE_MOBILE = 0.6;
-const HOOK_SCALE_DESKTOP = 0.8;
+const HOOK_SCALE_DESKTOP = 0.7;
 
 export default function FishingHook() {
   const { scrollYProgress } = useScroll();

@@ -236,7 +236,7 @@ html[data-fish-cursor="humu"] {
       left: 55vw;
       top: 15vh;
       height: 40vh;
-      width: 30vh;
+      width: 28vh;
     }
     /* Narrow desktop / short-width window: pull in from the right */
     @media (min-width: 1024px) and (max-width: 1279px) {
@@ -315,7 +315,7 @@ html[data-fish-cursor="humu"] {
     @media (min-width: 768px) {
       left: 60vw;
       top: 37vh;
-      width: 25vw;
+      width: 22vw;
     }
     /* Narrow desktop */
     @media (min-width: 1024px) and (max-width: 1279px) {

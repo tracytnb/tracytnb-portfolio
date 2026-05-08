@@ -48,14 +48,14 @@ export default function Home() {
       <Header />
       {/* <About /> */}
       <AboutParallax />
-      <div className="w-11/12 mx-auto flex flex-col gap-24 md:gap-32">
+      <div className="w-11/12 mx-auto flex flex-col gap-24 sm:gap-24 md:gap-28 lg:gap-32 pr-4 sm:pr-4 md:pr-4 lg:pr-0">
         <Projects />
         <Work />
         <TechStack />
         <Contact />
       </div>
       <Footer />
-      <div className="pointer-events-none fixed right-1 md:right-1 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end">
+      <div className="pointer-events-none fixed right-1 md:-right-2.5 lg:right-1 top-0 z-40 flex h-dvh w-[min(18rem,calc(100vw-1rem))] justify-end">
         <div
           className="pointer-events-auto relative h-full w-20 shrink-0"
           onMouseEnter={() => setRailHovered(true)}

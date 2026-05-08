@@ -6,7 +6,7 @@ export const workData = [
     bullets: [
       "Built and iterated on a production-grade React + TypeScript web application, delivering a modular Dashboard/Search experience with Redux state management, pagination, filters, and refactored reusable hooks and components.",
       "Integrated third-party authentication and role management end-to-end, implementing Firebase Auth flows (email/password and anonymous guest), added Firebase Admin SDK support, and configured Google/Microsoft OAuth for real-world login and authorization.",
-      "Designed and implemented RESTful backend endpoints using Express and TypeScript with proper HTTP semantics, including request validation, authentication middleware, and clear status/error handling (400/401/404/500).",
+      "Designed and implemented RESTful backend endpoints using Express and TypeScript with proper HTTP semantics, including request validation, authentication middleware, and clear status/error handling.",
       "Implemented relational data storage for core platform features by designing and evolving a SQLite schema for authenticated users and sessions, role audit logging, shareable session snapshots, and persistent user state with TTL logic to support scalable platform behavior.",
     ],
   },

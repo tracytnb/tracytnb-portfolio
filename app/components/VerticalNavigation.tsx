@@ -46,7 +46,7 @@ const VerticalNavigation = ({ railHovered }: VerticalNavigationProps) => {
               initial={false}
             >
               <motion.span
-                className={`whitespace-nowrap text-right text-md md:text-sm lg:text-md font-medium text-white ${highlight === item.thresholdId ? "scale-110 -translate-x-3 duration-300 ease-in-out" : ""}`}
+                className={`whitespace-nowrap text-right text-md md:text-sm lg:text-lg font-medium text-white ${highlight === item.thresholdId ? "scale-110 -translate-x-3 duration-300 ease-in-out" : ""}`}
                 animate={{ scale: highlight === item.thresholdId ? 1.1 : 1 }}
                 initial={false}
               >
